@@ -1,0 +1,45 @@
+import{bM as a,t,bN as v,q as y,a9 as l,a0 as u}from"./index-CyU-2bPn.js";const _={cash:"Cash",mpesa:"M-Pesa",bank:"Bank",cheque:"Cheque",card:"Card"},k=s=>t(_[s]||s),g=s=>new Date(s).toLocaleDateString("en-KE",{day:"2-digit",month:"short",year:"numeric"}),$=s=>{const n=Math.round((Number(s)||0)*1e3)/1e3;return Number.isInteger(n),String(n)},h=`h1{font:800 24px 'Bricolage Grotesque',Arial;margin:0;letter-spacing:-.01em} .strip{height:5px;background:linear-gradient(100deg,#EE4B3B,#F6B22C 48%,#14B1AC);margin:10px 0 14px;border-radius:3px}
+th{background:#0A1530;color:#fff;padding:7px;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em} td{padding:6px 7px;border-bottom:1px solid #ddd} .n{text-align:right;font-family:'JetBrains Mono',monospace;white-space:nowrap}
+.box{border:1px solid #ccc;border-radius:6px;padding:8px 10px} .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px} .k{font-size:10px;text-transform:uppercase;color:#555;letter-spacing:.05em}
+.blank{display:inline-block;min-width:70px;border-bottom:1px solid #000;height:16px} .sig{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px} .sig div{border-top:1px solid #000;padding-top:4px;font-size:11px}
+.foot{margin-top:22px;color:#555;font-size:10.5px}`;function b(s,n,r,c){const i=s.business,o=s.branch;return`<div class="row"><div>${i.logo?`<img src="${i.logo}" alt="" style="max-height:54px;max-width:160px;display:block;margin-bottom:4px">`:""}<div class="b l">${a(i.name)}</div>
+  <div class="s">${a([o?.name,o?.address||i.address,i.town].filter(Boolean).join(" · "))}</div><div class="s">${a(y(o?.phone||i.phone))}${i.email?" · "+a(i.email):""}${i.kra_pin?" · KRA PIN "+a(i.kra_pin):""}</div></div>
+  <div class="r"><h1>${a(n)}</h1><div class="b">${a(r||"")}</div><div class="s">${g(c||Date.now())}</div></div></div><div class="strip"></div>`}const x=(s,n)=>n?`<div class="box"><div class="k">${a(s)}</div><b>${a(n.name)}</b>${n.contact?`<div class="s">${a(n.contact)}</div>`:""}<div class="s">${a(y(n.phone))}${n.email?" · "+a(n.email):""}</div>${n.kra_pin?`<div class="s">KRA PIN ${a(n.kra_pin)}</div>`:""}</div>`:"<div></div>",m=()=>`<div class="foot">${t("Printed {d}",{d:new Date().toLocaleString("en-KE")})} · Powered by Pentarch POS</div>`;function w(s,n,r){const c=s.lines.map((o,e)=>`<tr><td>${e+1}</td><td>${a(o.name)}</td><td class="n">${$(o.qty)}</td><td class="n">${l(o.cost)}</td><td class="n">${l(Math.round(o.qty*o.cost))}</td></tr>`).join(""),i=`${b(r,t("PURCHASE ORDER"),s.no,s.created_at)}
+  <div class="grid">${x(t("Supplier"),n)}<div class="box"><div class="k">${t("Deliver to@@po")}</div><b>${a(r.business.name)}</b><div class="s">${a(r.branch?.name||"")}</div>
+  ${s.expected_date?`<div class="s">${t("Expected by")}: <b>${a(s.expected_date)}</b></div>`:""}${n?.terms_days?`<div class="s">${t("Payment terms")}: ${t("{n} days",{n:n.terms_days})}</div>`:""}</div></div>
+  <table><tr><th>#</th><th>${t("Item")}</th><th class="n">${t("Qty")}</th><th class="n">${t("Unit cost")}</th><th class="n">${t("Amount")}</th></tr>${c}</table>
+  <div class="r xl" style="margin-top:12px">${t("Total")}: ${u(s.total||0)}</div>
+  ${s.notes?`<div class="box" style="margin-top:12px"><div class="k">${t("Notes")}</div>${a(s.notes)}</div>`:""}
+  ${r.settings?.po_footer?`<div class="s" style="margin-top:10px">${a(r.settings.po_footer)}</div>`:""}
+  <div class="sig"><div>${t("Authorised by")}</div><div>${t("Supplier acknowledgement")}</div></div>${m()}`;return v(i,{paper:"a4",title:s.no,css:h})}function E(s,n,r){const c=s.lines.map(i=>`• ${i.name} × ${$(i.qty)}${i.cost?` @ ${l(i.cost)}`:""}`).join(`
+`);return`${t("Hello {name},",{name:(n?.contact||n?.name||"").split(" ")[0]})}
+${t("Please supply the following for {biz} ({branch}):",{biz:r.business.name,branch:r.branch?.name||""})}
+
+${t("Order")} ${s.no}
+${c}
+
+${t("Total")}: ${u(s.total||0)}${s.expected_date?`
+`+t("Expected by")+": "+s.expected_date:""}${s.notes?`
+`+s.notes:""}
+
+${t("Thank you.")}`}function R(s,n,r,c=""){const i=s.kind==="return",o=s.lines.map((d,f)=>`<tr><td>${f+1}</td><td>${a(d.name)}${d.batch_no?`<div class="s">${t("Batch")} ${a(d.batch_no)}${d.expiry?" · "+t("Exp")+" "+a(d.expiry):""}</div>`:""}${d.serials?.length?`<div class="s">${t("Serials")}: ${a(d.serials.join(", "))}</div>`:""}${d.pack?`<div class="s">${$(d.pack.qty)} × ${a(d.pack.name)}</div>`:""}</td>
+    <td class="n">${$(Math.abs(d.qty))}</td><td class="n">${l(d.cost)}</td><td class="n">${l(Math.round(Math.abs(d.qty)*d.cost))}</td></tr>`).join(""),e=(s.extra_costs||[]).filter(d=>d.amount).map(d=>`<div class="row"><span>${a(d.label||t("Extra cost"))}</span><span class="n">${l(d.amount)}</span></div>`).join(""),p=`${b(r,i?t("GOODS RETURN NOTE"):t("GOODS RECEIVED NOTE"),s.no,s.created_at)}
+  <div class="grid">${x(t("Supplier"),n)}<div class="box">${s.supplier_invoice_no?`<div class="k">${t("Supplier invoice no.")}</div><b>${a(s.supplier_invoice_no)}</b>`:""}
+  ${i&&s.reason?`<div class="k">${t("Reason")}</div><b>${a(s.reason)}</b>`:""}${c?`<div class="s">${i?t("Returned by"):t("Received by")}: ${a(c)}</div>`:""}</div></div>
+  <table><tr><th>#</th><th>${t("Item")}</th><th class="n">${t("Qty")}</th><th class="n">${t("Unit cost")}</th><th class="n">${t("Amount")}</th></tr>${o}</table>
+  <div style="margin-left:auto;width:280px;margin-top:10px">${e?`<div class="row"><span>${t("Goods")}</span><span class="n">${l(Math.abs(s.subtotal))}</span></div>${e}`:""}
+  <div class="row xl"><span>${i?t("Credit (return)"):t("Total")}</span><span>${u(Math.abs(s.total))}</span></div>${s.paid?`<div class="row"><span>${t("Paid on delivery")}</span><span class="n">${l(s.paid)}</span></div>`:""}</div>
+  ${s.note?`<div class="box" style="margin-top:12px"><div class="k">${t("Notes")}</div>${a(s.note)}</div>`:""}
+  <div class="sig"><div>${i?t("Returned by"):t("Received by")}</div><div>${t("Supplier / driver")}</div></div>${m()}`;return v(p,{paper:"a4",title:s.no,css:h})}function P(s,n,r){const c=s.status==="received",i=s.lines.map((e,p)=>`<tr><td>${p+1}</td><td>${a(e.name)}${e.batches?.filter(d=>d.batch_no).length?`<div class="s">${e.batches.filter(d=>d.batch_no).map(d=>`${a(d.batch_no)} (${$(d.qty)})`).join(", ")}</div>`:""}${e.serials?.length?`<div class="s">${a(e.serials.join(", "))}</div>`:""}</td>
+    <td class="n">${$(e.qty)}</td><td class="n">${c?$(e.received):'<span class="blank"></span>'}</td></tr>`).join(""),o=`${b(n,t("STOCK TRANSFER"),s.no,s.sent_at||s.created_at)}
+  <div class="grid"><div class="box"><div class="k">${t("From")}</div><b>${a(r(s.from_branch_id))}</b></div><div class="box"><div class="k">${t("To")}</div><b>${a(r(s.to_branch_id))}</b></div></div>
+  <table><tr><th>#</th><th>${t("Item")}</th><th class="n">${t("Qty sent")}</th><th class="n">${t("Qty received")}</th></tr>${i}</table>
+  ${s.note?`<div class="box" style="margin-top:12px"><div class="k">${t("Notes")}</div>${a(s.note)}</div>`:""}
+  <div class="sig"><div>${t("Sent by")}</div><div>${t("Received by")}</div></div>${m()}`;return v(o,{paper:"a4",title:s.no,css:h})}function T(s,n,r,{blind:c}){const i=`${b(r,t("STOCK COUNT SHEET"),s.no,s.created_at)}
+  <div class="s" style="margin-bottom:8px">${t("Write the quantity you find on the shelf. Count every item, including the store room.")}</div>
+  <table><tr><th>#</th><th>${t("Item")}</th><th>${t("Barcode / SKU")}</th>${c?"":`<th class="n">${t("System")}</th>`}<th class="n">${t("Counted")}</th></tr>
+  ${n.map((o,e)=>`<tr><td>${e+1}</td><td>${a(o.product.name)}</td><td class="s">${a(o.product.barcode||o.product.sku||"")}</td>${c?"":`<td class="n">${$(o.expected)} ${a(o.product.unit!=="pc"?o.product.unit:"")}</td>`}<td class="n">${o.counted!=null?$(o.counted):'<span class="blank"></span>'}</td></tr>`).join("")}</table>
+  <div class="sig"><div>${t("Counted by")}</div><div>${t("Checked by")}</div></div>${m()}`;return v(i,{paper:"a4",title:s.no,css:h})}function C(s,n,r){const c=[];for(const e of n.docs)c.push({at:e.created_at,ref:e.no+(e.supplier_invoice_no?" / "+e.supplier_invoice_no:""),desc:e.kind==="return"?t("Goods returned"):t("Goods received"),debit:e.kind==="return"?-e.total:0,credit:e.kind==="return"?0:e.total});for(const e of n.payments)c.push({at:e.created_at,ref:e.ref||"",desc:e.amount<0?t("Refund from supplier"):t("Payment")+" — "+k(e.method),debit:e.amount>0?e.amount:0,credit:e.amount<0?-e.amount:0});c.sort((e,p)=>e.at-p.at);let i=0;const o=`${b(r,t("SUPPLIER STATEMENT"),"",Date.now())}${x(t("Supplier"),s)}
+  <table style="margin-top:12px"><tr><th>${t("Date")}</th><th>${t("Reference")}</th><th>${t("Details")}</th><th class="n">${t("Paid / returned")}</th><th class="n">${t("Supplied")}</th><th class="n">${t("Balance")}</th></tr>
+  ${c.map(e=>(i+=e.credit-e.debit,`<tr><td>${g(e.at)}</td><td>${a(e.ref)}</td><td>${a(e.desc)}</td><td class="n">${e.debit?l(e.debit):""}</td><td class="n">${e.credit?l(e.credit):""}</td><td class="n">${l(i)}</td></tr>`)).join("")}</table>
+  <div class="r xl" style="margin-top:14px">${t("We owe")}: ${u(n.balance)}</div>${m()}`;return v(o,{paper:"a4",title:"Statement "+s.name,css:h})}export{E as a,T as c,R as g,w as p,C as s,P as t};

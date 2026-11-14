@@ -1,0 +1,77 @@
+{
+  "at": "2026-11-09T12:58:28.214Z",
+  "results": [
+    {
+      "name": "Sign up using the visible labels only",
+      "ok": true
+    },
+    {
+      "name": "Admin approves the agent in wp-admin",
+      "ok": true
+    },
+    {
+      "name": "Check status → first-run tour (4 steps) → Home \"Start here\"",
+      "ok": true
+    },
+    {
+      "name": "Tour can be replayed from More and skipped",
+      "ok": true
+    },
+    {
+      "name": "Add a lead: only name + phone + type; phone auto-formats 07… → 2547…",
+      "ok": true
+    },
+    {
+      "name": "Log a visit",
+      "ok": true
+    },
+    {
+      "name": "Book a demo from the big \"next step\" button",
+      "ok": true
+    },
+    {
+      "name": "Stage change shows a toast with Undo, and Undo works",
+      "ok": true
+    },
+    {
+      "name": "Start the 30-day trial → WhatsApp message ready for the owner",
+      "ok": true
+    },
+    {
+      "name": "Send WhatsApp: \"Check in on WhatsApp\" opens wa.me with a ready message",
+      "ok": true
+    },
+    {
+      "name": "Today checklist: follow-up due today, tick ✓ with Undo; trial ending shows Remind",
+      "ok": true
+    },
+    {
+      "name": "Pull down to refresh syncs",
+      "ok": true
+    },
+    {
+      "name": "Earnings: client pays yearly → KES 2,400 pending; rates match the price list",
+      "ok": true
+    },
+    {
+      "name": "Prices (Resources) match pricing-decisions.md",
+      "ok": true
+    },
+    {
+      "name": "Offline: banner explains, lead saves on the phone, sends when back online",
+      "ok": true
+    },
+    {
+      "name": "Kiswahili: Home and lead form read naturally",
+      "ok": true
+    },
+    {
+      "name": "Desktop 1366×768: sign in, tour, Today, lead, earnings, prices",
+      "ok": true
+    },
+    {
+      "name": "No JavaScript errors",
+      "ok": true
+    }
+  ]
+}

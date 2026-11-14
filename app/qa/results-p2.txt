@@ -1,0 +1,55 @@
+===== flows-restaurant
+   busy 3 bill 1 ready 2
+✔ floor plan: demo tables by area, status colours, elapsed time, home widget (995 ms)
+✔ open a free table with 3 guests → Sell with table bar (693 ms)
+✔ add food with modifiers + note and a drink, send to kitchen → one KOT per station (3825 ms)
+✔ add more → round 2 prints only the new items (1813 ms)
+✔ remove an item already sent: needs approval + reason → VOID ticket (4472 ms)
+✔ print bill → table shows "bill printed"; bill text has total and M-Pesa till (3342 ms)
+   lines 3 → 6
+✔ transfer T2 → T8 (KDS tickets follow), then merge T1 into it (3108 ms)
+   bill KES 3,090 → KES 2,740 part KKC1-001853
+✔ split by items: pay 1 omelette now, the rest stays on the table (3133 ms)
+✔ split equally between 3: payment screen shows shares; full payment frees the table (4098 ms)
+✔ counter sale stays a normal retail sale (order type Counter) (2443 ms)
+✔ takeaway from the Sell screen: name + phone → queue → send → statuses → pay (5286 ms)
+✔ delivery: address + rider required details, appears with rider (1568 ms)
+   tickets 9 bar 3
+✔ kitchen display: open tickets per station with timers; bump and recall (2444 ms)
+✔ waiter mode: lands on tables, opens a table, payment needs a cashier/manager PIN (3479 ms)
+   VIP 1 at 30 330
+✔ edit layout: add a table, drag it, rename; empty state offers a typical layout (2431 ms)
+✔ service charge on dine-in only (setting) adds to table bills, not counter sales (3167 ms)
+✔ bar demo: tables + bar station tickets (3104 ms)
+flows-restaurant: no console errors
+===== flows-services
+✔ adding a service pops the staff picker; chip on the line changes who did it (3257 ms)
+    EN | Esther Njeri | 12 services · KES 10,750 · 30% | KES 3,575
+✔ commission report: today, by staff (service rate 40% beats staff 30%), detail, print + CSV (2642 ms)
+✔ settings: commission per staff and per service are saved (1387 ms)
+✔ appointments: today list (seeded), book a client, clash warning for same staff & time (4364 ms)
+✔ client arrived → sale opens with service, stylist and client → paid → appointment done (2377 ms)
+✔ home shows today’s appointments (736 ms)
+✔ cyber / print shop: adding services does not interrupt with a staff picker (1716 ms)
+flows-services: no console errors
+===== flows-quotes
+✔ seeded quotes in every state and invoices with balances (1040 ms)
+    Q-JHB1-0008 32903
+✔ new quote: customer, items by search, qty, price change, discount, validity → saved as draft (3121 ms)
+✔ print A4 quotation; WhatsApp marks it sent (1461 ms)
+✔ convert to invoice → credit sale with due date; A4 invoice shows M-Pesa + bank + balance (1842 ms)
+✔ invoices: receive payment (oldest first) → paid; delivery note (3028 ms)
+✔ convert a quote to a cash sale: cart gets the lines + customer; quote marked sold (2269 ms)
+✔ credit limit: invoicing above the customer limit asks for manager approval (2280 ms)
+✔ settings: payment terms + bank details appear on invoices (2349 ms)
+✔ wholesale demo: quotes module on, quotes seeded (1328 ms)
+flows-quotes: no console errors
+===== flows-kds-sync
+✔ restaurant trial on device A (wizard + template menu) → typical table layout (4718 ms)
+✔ A: open T1, add food + drink, send to kitchen → pushed to the cloud (3814 ms)
+✔ B (kitchen tablet) signs in → KDS shows both tickets from A (988 ms)
+✔ B bumps both tickets → A sees the order as "Food ready" (3610 ms)
+✔ offline: A sends round 2 with no network (own KDS shows it, outbox queued), B gets it after reconnect (4573 ms)
+✔ A pays the table; B sees the order closed (paid) (3612 ms)
+flows-kds-sync: no console errors
+passed steps: 39   failed steps: 0

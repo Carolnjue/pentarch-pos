@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-09T12:58:05.291Z",
+  "results": [
+    {
+      "name": "Unauthenticated visit redirects to sign-in",
+      "ok": true
+    },
+    {
+      "name": "Sign up → pending approval screen",
+      "ok": true
+    },
+    {
+      "name": "Admin approval → Check status opens the dashboard",
+      "ok": true
+    },
+    {
+      "name": "Sync pulls seeded leads, trials and commissions; dashboard renders",
+      "ok": true
+    },
+    {
+      "name": "Leads list with search and stage filters",
+      "ok": true
+    },
+    {
+      "name": "New lead: validation, duplicate phone warning, GPS capture, save",
+      "ok": true
+    },
+    {
+      "name": "Log a visit with follow-up date",
+      "ok": true
+    },
+    {
+      "name": "Book a demo (online) → booking stored and stage demo_booked",
+      "ok": true
+    },
+    {
+      "name": "Start 30-day trial → credentials + WhatsApp message",
+      "ok": true
+    },
+    {
+      "name": "Offline: create lead while offline → queued → syncs when back online",
+      "ok": true
+    },
+    {
+      "name": "App shell works offline after first load (service worker)",
+      "ok": true
+    },
+    {
+      "name": "Commissions, resources, more, profile screens",
+      "ok": true
+    },
+    {
+      "name": "Kiswahili toggle translates the UI and persists",
+      "ok": true
+    },
+    {
+      "name": "Desktop 1366×768: login, dashboard, leads, lead detail, commissions",
+      "ok": true
+    },
+    {
+      "name": "PWA manifest and service worker are installable",
+      "ok": true
+    }
+  ]
+}

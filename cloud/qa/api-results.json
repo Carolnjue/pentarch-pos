@@ -1,0 +1,193 @@
+{
+  "base": "http://127.0.0.1:8080",
+  "at": "2026-11-09T12:57:43.019Z",
+  "pushMs": 474,
+  "pullMs": 37,
+  "results": [
+    {
+      "name": "GET /public/config returns trial days, prices and contact",
+      "ok": true,
+      "ms": 50
+    },
+    {
+      "name": "POST /auth/register validates input (422 with field errors)",
+      "ok": true,
+      "ms": 38
+    },
+    {
+      "name": "POST /auth/register creates tenant A with 30-day trial, PP code, normalised phone",
+      "ok": true,
+      "ms": 450
+    },
+    {
+      "name": "POST /auth/register rejects duplicate email (409)",
+      "ok": true,
+      "ms": 22
+    },
+    {
+      "name": "POST /auth/login: wrong password 401, correct gives a second device",
+      "ok": true,
+      "ms": 140
+    },
+    {
+      "name": "GET /licence requires a token and returns full shape",
+      "ok": true,
+      "ms": 51
+    },
+    {
+      "name": "X-PPC-Token header works when Authorization is stripped by the host",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "name": "POST /sync/push 2,000 mixed records in 4 batches of 500",
+      "ok": true,
+      "ms": 476
+    },
+    {
+      "name": "POST /sync/push rejects batches over 500 (413)",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "name": "GET /sync/pull pages 2,000 records (limit 1000, has_more, next_seq)",
+      "ok": true,
+      "ms": 64
+    },
+    {
+      "name": "LWW: newer update wins, older update is ignored (accepted + superseded)",
+      "ok": true,
+      "ms": 83
+    },
+    {
+      "name": "Ledger idempotency: re-pushing 250 sales changes nothing; a newer version (void) is applied",
+      "ok": true,
+      "ms": 740
+    },
+    {
+      "name": "Invalid changes are rejected with reasons, valid ones in the same batch accepted",
+      "ok": true,
+      "ms": 28
+    },
+    {
+      "name": "Tenant isolation: B cannot see A, same record id stored separately",
+      "ok": true,
+      "ms": 338
+    },
+    {
+      "name": "M-Pesa STK returns 501 when Daraja is not configured; unknown status 404",
+      "ok": true,
+      "ms": 38
+    },
+    {
+      "name": "M-Pesa callback: wrong secret 403; valid callback for a licence request records payment",
+      "ok": true,
+      "ms": 460
+    },
+    {
+      "name": "POST /backup stores a JSON snapshot",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "name": "GET /me returns tenant + device",
+      "ok": true,
+      "ms": 14
+    },
+    {
+      "name": "POST /auth/logout revokes only that device token",
+      "ok": true,
+      "ms": 41
+    },
+    {
+      "name": "Agent sign-up → pending; terms required; duplicate email 409",
+      "ok": true,
+      "ms": 106
+    },
+    {
+      "name": "Pending agent: login works, /me shows pending, leads endpoints 403",
+      "ok": true,
+      "ms": 163
+    },
+    {
+      "name": "Admin approves agent in wp-admin (admin-post) → approval email",
+      "ok": true,
+      "ms": 169
+    },
+    {
+      "name": "Agent leads push/pull with activities, LWW and phone duplicate check",
+      "ok": true,
+      "ms": 105
+    },
+    {
+      "name": "Agent starts a 30-day trial for a lead → tenant with agent attribution + WhatsApp message",
+      "ok": true,
+      "ms": 368
+    },
+    {
+      "name": "Agent books a demo for a lead → booking linked to agent + lead stage demo_booked",
+      "ok": true,
+      "ms": 194
+    },
+    {
+      "name": "Admin records yearly subscription → paid_until +12 months, 20% commission (KES 2,400)",
+      "ok": true,
+      "ms": 326
+    },
+    {
+      "name": "Admin records Complete Till package → KES 3,000 bonus; Counter Kit → KES 1,000; setup only → none",
+      "ok": true,
+      "ms": 372
+    },
+    {
+      "name": "Admin approves then marks commissions paid with M-Pesa ref",
+      "ok": true,
+      "ms": 340
+    },
+    {
+      "name": "Agent leaderboard (first names only) and resources",
+      "ok": true,
+      "ms": 27
+    },
+    {
+      "name": "Agent profile update (M-Pesa number, language) and logout",
+      "ok": true,
+      "ms": 124
+    },
+    {
+      "name": "Demo booking: honeypot pretends success but stores nothing",
+      "ok": true,
+      "ms": 354
+    },
+    {
+      "name": "Demo booking: validation, stored with ref, agent ref creates a lead for that agent",
+      "ok": true,
+      "ms": 243
+    },
+    {
+      "name": "Licence lifecycle: trial → grace → expired → active (payment) → suspended",
+      "ok": true,
+      "ms": 863
+    },
+    {
+      "name": "Admin resets owner password (old stops working)",
+      "ok": true,
+      "ms": 243
+    },
+    {
+      "name": "Rate limits: demo booking (429 + Retry-After) and login brute force",
+      "ok": true,
+      "ms": 1151
+    },
+    {
+      "name": "CORS is same-origin only on the POS API",
+      "ok": true,
+      "ms": 45
+    },
+    {
+      "name": "Static: /pos/ and /pos/agents/ served with correct types and cache headers",
+      "ok": true,
+      "ms": 133
+    }
+  ]
+}

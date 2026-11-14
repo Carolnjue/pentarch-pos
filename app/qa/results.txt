@@ -1,0 +1,653 @@
+===== npm test --silent
+TAP version 13
+#   search over 20k: 1.53 ms/query
+# Subtest: money parsing & formatting
+ok 1 - money parsing & formatting
+  ---
+  duration_ms: 1.392168
+  type: 'test'
+  ...
+# Subtest: VAT-inclusive tax by eTIMS code
+ok 2 - VAT-inclusive tax by eTIMS code
+  ---
+  duration_ms: 0.146536
+  type: 'test'
+  ...
+# Subtest: EAN-13 check digits & internal codes
+ok 3 - EAN-13 check digits & internal codes
+  ---
+  duration_ms: 1.465029
+  type: 'test'
+  ...
+# Subtest: scale barcodes (weight / price embedded)
+ok 4 - scale barcodes (weight / price embedded)
+  ---
+  duration_ms: 0.400276
+  type: 'test'
+  ...
+# Subtest: cart totals: discounts, allocation, tax, rounding
+ok 5 - cart totals: discounts, allocation, tax, rounding
+  ---
+  duration_ms: 1.033759
+  type: 'test'
+  ...
+# Subtest: unit price: wholesale tiers, UoM, branch price
+ok 6 - unit price: wholesale tiers, UoM, branch price
+  ---
+  duration_ms: 0.172786
+  type: 'test'
+  ...
+# Subtest: promotions
+ok 7 - promotions
+  ---
+  duration_ms: 0.292242
+  type: 'test'
+  ...
+# Subtest: stock derivation from the ledger, FEFO, moving average
+ok 8 - stock derivation from the ledger, FEFO, moving average
+  ---
+  duration_ms: 0.311896
+  type: 'test'
+  ...
+# Subtest: ULID, SHA-256, phone & M-Pesa code
+ok 9 - ULID, SHA-256, phone & M-Pesa code
+  ---
+  duration_ms: 0.837711
+  type: 'test'
+  ...
+# Subtest: CSV round trip
+ok 10 - CSV round trip
+  ---
+  duration_ms: 0.413029
+  type: 'test'
+  ...
+# Subtest: search: ranking, typo tolerance and 20k speed
+ok 11 - search: ranking, typo tolerance and 20k speed
+  ---
+  duration_ms: 80.268533
+  type: 'test'
+  ...
+# Subtest: licence evaluation (trial, grace, expired, offline cache)
+ok 12 - licence evaluation (trial, grace, expired, offline cache)
+  ---
+  duration_ms: 0.413929
+  type: 'test'
+  ...
+# Subtest: licence: server grace_days, and prices from /licence or /public/config
+ok 13 - licence: server grace_days, and prices from /licence or /public/config
+  ---
+  duration_ms: 0.32994
+  type: 'test'
+  ...
+# Subtest: sync apply rule: strictly newer versions win, ledger rows included (sale → void)
+ok 14 - sync apply rule: strictly newer versions win, ledger rows included (sale → void)
+  ---
+  duration_ms: 4.465719
+  type: 'test'
+  ...
+# Subtest: ledger running balance per branch, before/after
+ok 15 - ledger running balance per branch, before/after
+  ---
+  duration_ms: 1.554857
+  type: 'test'
+  ...
+# Subtest: landed cost: extra costs shared by value, by qty when costs are zero
+ok 16 - landed cost: extra costs shared by value, by qty when costs are zero
+  ---
+  duration_ms: 0.333125
+  type: 'test'
+  ...
+# Subtest: moving average cost on receiving
+ok 17 - moving average cost on receiving
+  ---
+  duration_ms: 0.154886
+  type: 'test'
+  ...
+# Subtest: supplier account: returns and payments pay the oldest deliveries first
+ok 18 - supplier account: returns and payments pay the oldest deliveries first
+  ---
+  duration_ms: 0.464888
+  type: 'test'
+  ...
+# Subtest: reorder suggestion covers 14 days of sales, at least the reorder quantity
+ok 19 - reorder suggestion covers 14 days of sales, at least the reorder quantity
+  ---
+  duration_ms: 0.197296
+  type: 'test'
+  ...
+# Subtest: count variance with KES value
+ok 20 - count variance with KES value
+  ---
+  duration_ms: 0.253382
+  type: 'test'
+  ...
+# Subtest: expiry days and buckets
+ok 21 - expiry days and buckets
+  ---
+  duration_ms: 0.370715
+  type: 'test'
+  ...
+# Subtest: purchase order status from deliveries
+ok 22 - purchase order status from deliveries
+  ---
+  duration_ms: 0.219805
+  type: 'test'
+  ...
+# Subtest: transfer receipt split over sent batches; repack cost
+ok 23 - transfer receipt split over sent batches; repack cost
+  ---
+  duration_ms: 0.412883
+  type: 'test'
+  ...
+# Subtest: sales totals ignore voids and subtract refunds
+ok 24 - sales totals ignore voids and subtract refunds
+  ---
+  duration_ms: 2.196086
+  type: 'test'
+  ...
+# Subtest: VAT by eTIMS code with returns matched to the sale line
+ok 25 - VAT by eTIMS code with returns matched to the sale line
+  ---
+  duration_ms: 0.339235
+  type: 'test'
+  ...
+# Subtest: profit & loss: sales − returns − VAT − COGS − expenses − pay-outs
+ok 26 - profit & loss: sales − returns − VAT − COGS − expenses − pay-outs
+  ---
+  duration_ms: 0.354526
+  type: 'test'
+  ...
+# Subtest: debtors aging buckets and payments allocated
+ok 27 - debtors aging buckets and payments allocated
+  ---
+  duration_ms: 0.375479
+  type: 'test'
+  ...
+# Subtest: stock valuation, low stock, expiry and dead stock
+ok 28 - stock valuation, low stock, expiry and dead stock
+  ---
+  duration_ms: 0.660074
+  type: 'test'
+  ...
+# Subtest: exceptions summary and staff commission
+ok 29 - exceptions summary and staff commission
+  ---
+  duration_ms: 0.293799
+  type: 'test'
+  ...
+# Subtest: purchases are net of supplier returns; balance = deliveries − returns − payments (refund = negative payment)
+ok 30 - purchases are net of supplier returns; balance = deliveries − returns − payments (refund = negative payment)
+  ---
+  duration_ms: 0.455396
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 305.555678
+===== node scripts/i18n-check.mjs
+strings: 2748 · translated: 2748 · missing: 0
+===== node qa/scripts/smoke.mjs
+demo ready in 2004 ms
+smoke: no console errors
+===== node qa/scripts/flows-sell.mjs
+   cart total KES 735
+✔ scan adds items (wedge detection), repeat scan merges (825 ms)
+✔ search + Enter adds; 3* prefix multiplies (464 ms)
+✔ cash sale with quick note + change (1122 ms)
+✔ M-Pesa sale with code format check (1082 ms)
+   split MGD1-002049 cash:100 + mpesa:230
+✔ split payment: cash 100 + M-Pesa rest (2123 ms)
+   payment allocations 7
+✔ credit sale to customer + later payment (3292 ms)
+✔ hold & recall (3040 ms)
+   after 10% discount KES 387
+✔ line edit: discount within limit, price change (1453 ms)
+✔ return part of a sale + return slip (2989 ms)
+   void moves 1
+✔ void a sale (reason, stock reversed, audited) (3004 ms)
+✔ cashier needs manager PIN to void (1801 ms)
+✔ close shift with denomination count (Z report), open new shift (2306 ms)
+audit actions: discount.apply=105, shift.close=30, sale.return=8, sale.void=25, purchase.receive=6, drawer.open=3, purchase.return=1, supplier.payment=1, stock.adjust=5, stock.count=1, price.change=1, user.login=5, po.create=1, sale.create=5, customer.payment=1, sale.hold=1, user.lock=2, override.grant=1, shift.open=1
+flows-sell: no console errors
+===== node qa/scripts/flows-products.mjs
+✔ products list (virtualised) + low stock filter (672 ms)
+   variants 6 barcodes ok true
+✔ add product with size × colour variants (1294 ms)
+✔ sell a variant via the size/colour picker (602 ms)
+✔ print labels: 38×25 and A4 3×8 preview (2102 ms)
+   imported OK; error rows skipped
+✔ CSV import: template, mapping, errors, import (460 ms)
+✔ product form: More options collapsed for simple use (254 ms)
+flows-products: no console errors
+===== node qa/scripts/flows-shell.mjs
+✔ command palette finds a product, a customer and a page (1397 ms)
+✔ F1 opens the keyboard shortcuts sheet (18 ms)
+✔ language switch to Kiswahili and back (1115 ms)
+✔ cashier: no Settings in the menu, void needs a manager (452 ms)
+✔ owner lets cashiers void (permission matrix) → cashier voids without a PIN (2969 ms)
+   backup records 6704 sales 2046
+   sales before 2046 after restore 2046
+✔ backup: download JSON, then restore it (type RESTORE) (3854 ms)
+   zip bytes 1376499
+✔ export everything as a CSV zip (236 ms)
+    https://wa.me/254735418207?text=*Mama Grace Duka* | Receipt MGD1-002046 · 09/11/2026, 15:20:
+✔ WhatsApp receipt opens wa.me with the receipt text (1070 ms)
+✔ receipt designer: 58 mm preview updates live (517 ms)
+   idle locks audited 1
+✔ idle auto-lock: set 1 minute in Selling options, then the till locks itself (1123 ms)
+flows-shell: no console errors
+===== node qa/scripts/flows-sync.mjs
+cloud: http://127.0.0.1:8787 app: http://localhost:4173/pos/
+✔ welcome → start free trial (with agent code from ?ref=) (959 ms)
+   registered T4c166d493000967c PP32292 licence trial 30d
+✔ setup wizard: all steps incl. template catalogue (3085 ms)
+   sale WGS1-000001 outbox after sync 0
+✔ sale on device A pushes to cloud (2644 ms)
+   B sees 1 sale(s); stock rows 1
+✔ device B signs in, pulls, sees the sale and stock (962 ms)
+   A sees status void
+✔ void on B propagates to A (ledger row update) (3952 ms)
+   offline outbox 4
+   sync state {"state":"idle","pending":0,"lastAt":1794227758751,"error":"","running":false,"stage":"idle"}
+   pill Synced just now online true
+   after reconnect outbox 0
+   B now has 2 sales
+✔ offline: reload with no network, still sells; syncs when back (3268 ms)
+✔ licence page shows business code as M-Pesa account (426 ms)
+    STK push is not set up on the cloud. Ask the customer to pay to the till and enter the cod
+✔ M-Pesa STK without Daraja keys (501) falls back to typing the code (1108 ms)
+flows-sync: no console errors
+===== node qa/scripts/flows-onboarding.mjs
+cloud: http://127.0.0.1:8787 app: http://localhost:4173/pos/
+   pre-registered 201
+   field error: This email already has a Pentarch POS account. Use “Sign in to my busi
+✔ [mock] trial form: email already registered → field error, nothing created; fix → trial starts (1275 ms)
+   re-keyed local-01M704XZ… → T5882d6d1c805dee6 · outbox 0 · cloud has {"business":1,"branches":1,"devices":1,"users":1,"categories":6,"products":1,"stock_moves":1,"sales":1,"audit":4}
+✔ [mock] trial started offline → sells → registers when back online (4189 ms)
+   server seeded business: {"name":"Mama Njeri Salon","type":"salon","modules":false,"updated_at":1}
+   cloud business now has modules + settings; products 34
+✔ [mock] website-started trial: first sign-in runs the wizard and completes the minimal business (5319 ms)
+flows-onboarding: no console errors
+===== node qa/scripts/first-time-cashier.mjs
+✔ cashier signs in by tapping her name and the PIN shown (349 ms)
+✔ opens Sell from the menu and follows the tour (2119 ms)
+✔ cash sale by tapping a product, Pay, Exact, New sale (1287 ms)
+✔ M-Pesa sale: Pay, M-Pesa, type code, Complete sale (1362 ms)
+✔ return: find receipt from the Sell screen, manager approves with PIN pad (1884 ms)
+✔ removing an item can be undone (602 ms)
+returns recorded by cashier session: 1
+first-time-cashier: no console errors
+===== node qa/scripts/empty-states.mjs
+✔ typical products added (55 tiles) and cleared again
+empty-states: no console errors
+===== node qa/scripts/flows-types.mjs
+✔ demo "duka": seeded data + a sale (4401 ms)
+✔ demo "minimart": seeded data + a sale (6838 ms)
+✔ demo "hardware": seeded data + a sale (3097 ms)
+✔ demo "agrovet": seeded data + a sale (3167 ms)
+✔ demo "pharmacy": seeded data + a sale (4090 ms)
+✔ demo "boutique": seeded data + a sale (2970 ms)
+✔ demo "electronics": seeded data + a sale (2941 ms)
+✔ demo "cosmetics": seeded data + a sale (3343 ms)
+✔ demo "butchery": seeded data + a sale (4482 ms)
+✔ demo "bakery": seeded data + a sale (4067 ms)
+✔ demo "restaurant": seeded data + a sale (4448 ms)
+✔ demo "bar": seeded data + a sale (4441 ms)
+✔ demo "salon": seeded data + a sale (3254 ms)
+✔ demo "stationery": seeded data + a sale (3538 ms)
+✔ demo "wholesale": seeded data + a sale (3517 ms)
+✔ demo "autospares": seeded data + a sale (3077 ms)
+✔ demo "gas_water": seeded data + a sale (3343 ms)
+✔ demo "other": seeded data + a sale (3109 ms)
+┌─────────┬───────────────┬──────────┬───────┬──────┬───────────┬───────┬─────────┬──────────────────────────────────────────────┐
+│ (index) │ type          │ products │ sales │ days │ customers │ staff │ seed_ms │ modules                                      │
+├─────────┼───────────────┼──────────┼───────┼──────┼───────────┼───────┼─────────┼──────────────────────────────────────────────┤
+│ 0       │ 'duka'        │ 55       │ 2047  │ 30   │ 14        │ 3     │ 1512    │ 'units,credit'                               │
+│ 1       │ 'minimart'    │ 74       │ 4735  │ 30   │ 14        │ 5     │ 2809    │ 'weights,units,credit,loyalty,multi_branch'  │
+│ 2       │ 'hardware'    │ 52       │ 734   │ 30   │ 14        │ 5     │ 897     │ 'wholesale,units,credit,quotes'              │
+│ 3       │ 'agrovet'     │ 42       │ 964   │ 30   │ 14        │ 4     │ 895     │ 'batches,units,credit'                       │
+│ 4       │ 'pharmacy'    │ 45       │ 1439  │ 30   │ 10        │ 4     │ 1478    │ 'batches,loyalty'                            │
+│ 5       │ 'boutique'    │ 59       │ 410   │ 30   │ 10        │ 3     │ 910     │ 'variants,loyalty'                           │
+│ 6       │ 'electronics' │ 36       │ 347   │ 30   │ 14        │ 3     │ 883     │ 'serials,credit,quotes'                      │
+│ 7       │ 'cosmetics'   │ 42       │ 892   │ 30   │ 10        │ 3     │ 957     │ 'loyalty'                                    │
+│ 8       │ 'butchery'    │ 38       │ 1862  │ 30   │ 14        │ 3     │ 1737    │ 'weights,credit'                             │
+│ 9       │ 'bakery'      │ 39       │ 1654  │ 30   │ 10        │ 3     │ 1478    │ 'quotes,recipes'                             │
+│ 10      │ 'restaurant'  │ 36       │ 1853  │ 30   │ 14        │ 5     │ 1616    │ 'restaurant,recipes'                         │
+│ 11      │ 'bar'         │ 41       │ 2236  │ 30   │ 14        │ 5     │ 1456    │ 'restaurant,units,credit'                    │
+│ 12      │ 'salon'       │ 34       │ 663   │ 30   │ 10        │ 6     │ 933     │ 'services,loyalty'                           │
+│ 13      │ 'stationery'  │ 42       │ 1348  │ 30   │ 14        │ 3     │ 948     │ 'services,credit'                            │
+│ 14      │ 'wholesale'   │ 37       │ 962   │ 30   │ 14        │ 5     │ 966     │ 'wholesale,units,credit,quotes,multi_branch' │
+│ 15      │ 'autospares'  │ 43       │ 508   │ 30   │ 14        │ 4     │ 921     │ 'credit,quotes'                              │
+│ 16      │ 'gas_water'   │ 40       │ 1207  │ 30   │ 14        │ 3     │ 934     │ 'credit'                                     │
+│ 17      │ 'other'       │ 41       │ 597   │ 30   │ 14        │ 3     │ 912     │ 'services,credit,quotes'                     │
+└─────────┴───────────────┴──────────┴───────┴──────┴───────────┴───────┴─────────┴──────────────────────────────────────────────┘
+flows-types: no console errors
+===== node qa/scripts/flows-reports.mjs
+   demo seeded + dashboard in 2766 ms
+✔ dashboard: headline sentence, comparisons and every card links to its report (180 ms)
+✔ sales summary, by product, category, staff, payment, hour, customer: totals = raw sales (1480 ms)
+   P&L this month: net sales 568814.83, expenses 73600, net 20475.96
+✔ profit, VAT by eTIMS code and profit & loss match a fresh calculation (594 ms)
+✔ stock value (from the ledger), movement, low stock, dead stock (1785 ms)
+✔ purchases by supplier, supplier balances, debtors aging and customer statement (1400 ms)
+✔ expenses, shifts (Z history), exceptions, commission and activity log (1449 ms)
+✔ branch filter: one branch = that branch's raw sales (222 ms)
+   products-2026-11-01_2026-11-09.csv: 74 products, total KES 197825.7
+✔ CSV export has every row and the totals row; A4 print preview (981 ms)
+✔ expenses: record from the till → shift expected cash falls, P&L includes it; delete + undo (2465 ms)
+✔ custom expense category is offered and shows in reports (1999 ms)
+✔ accountant: reports & expenses read-only, no profit & loss; stock clerk sees stock reports only (524 ms)
+✔ offline: reports and expenses open and compute with no network (1745 ms)
+✔ empty periods: every dated report explains what fills it (329 ms)
+   4680 sales in 30 days; build ms {"sales":79,"products":6,"profit":8,"vat":4,"pnl":7,"stock":4,"movement":55,"dead-stock":308,"aging":43}
+✔ speed: a month of a busy shop builds in < 1 s per report (1 ms)
+✔ pharmacy demo: expiry report and dashboard expiry card (1975 ms)
+flows-reports: no console errors
+===== node qa/scripts/flows-inventory.mjs
+   GRNs 6, returns 1, POs 3 (received/sent/draft), payments 3, counts 1, transfers 2
+   ledger = stock on hand for 74 product/branch rows; suppliers owed KES 321,234.9
+✔ demo seeds deliveries, orders, payments, adjustments, a count and transfers (263 ms)
+   low stock rows 3, search "maize" 2, ledger rows 16, csv stock-ruiru-main-2026-11-09.csv
+✔ stock on hand: value at cost & retail, low-stock filter, search, CSV export, scan opens the history (1712 ms)
+   Omo 1kg: 34 → 32, audited with user
+✔ adjust stock: damaged (scan in the dialog) — move + audit (1814 ms)
+   approved by Peter Ouma value -782000
+✔ stock clerk: a big adjustment needs a manager PIN (approved_by recorded) (2388 ms)
+   applied: 2 count moves, net -10329300 cents; uncounted items left as they were
+✔ blind stock take by the stock clerk: scan to count, type a number, manager unlocks differences, apply (5108 ms)
+✔ back to the owner (447 ms)
+   TR-FWX1-0003: sent 10, received 9 → short 1 recorded, audit transfer.discrepancy ×1
+✔ transfer: send to the other branch, receive there with a shortage (lost in transit) (3043 ms)
+✔ transfer: incoming delivery from the branch is received in full (1670 ms)
+   bag 22→21, 1 kg 911→961, cost per kg KES 156.4
+✔ repack: one 50 kg bag of sugar → 50 × 1 kg (remembered pairing, cost carried over) (1808 ms)
+   1 new draft order(s)
+✔ reorder suggestions → purchase orders per supplier (1039 ms)
+   WhatsApp link https://wa.me/254720300000?text=Hello%20David%2C%0APlease%20…
+✔ purchase order: print A4, send on WhatsApp (status → sent) (1787 ms)
+   GRN-FWX1-0007: total 131183.6 incl. transport 500; PO → partial; Jogoo Maize Flour 2kg cost 151.8 → 152.15; paid 1,000 on delivery
+   labels page: Print 932 labels
+✔ receive against the order: partial quantity, invoice no., transport cost, part payment → PO partial, moving-average cost, labels (6003 ms)
+   Kabras Sugar 1kg: +40 (2 × Bale (20))
+✔ receive without an order: scan a carton (bale of 20) → 40 pieces in stock (1724 ms)
+   paid KES 5,000 (TKX4R2P9QA) allocated to 5000
+✔ suppliers: add one, pay the oldest deliveries, statement, balances (3156 ms)
+   SR-FWX1-0002: credit 303.6, stock 464 → 462
+✔ return goods to a supplier: stock out + credit on the account (1504 ms)
+   offline: Golden Fry 1L 117 → 121 (found +1, delivery +3)
+✔ offline: adjust and receive stock with no connection, pages keep working after a reload (4128 ms)
+   expired batches 4; removed 31 of batch B29569
+✔ pharmacy: receive a batch with expiry, expiry tracker (≤30/60/90), remove an expired batch (FEFO) (3826 ms)
+   IMEIs saved in stock; lookup shows the delivery note
+✔ electronics: receive 2 phones with IMEIs (count enforced), IMEI lookup shows supplier delivery (2717 ms)
+   cloud has suppliers 1, goods_received 1, supplier_payments 1, purchase moves 1; outbox left 0
+✔ live business: supplier, delivery, payment and stock moves sync to the cloud (8382 ms)
+flows-inventory: no console errors
+===== node qa/scripts/flows-restaurant.mjs
+   busy 3 bill 1 ready 2
+✔ floor plan: demo tables by area, status colours, elapsed time, home widget (974 ms)
+✔ open a free table with 3 guests → Sell with table bar (706 ms)
+✔ add food with modifiers + note and a drink, send to kitchen → one KOT per station (3744 ms)
+✔ add more → round 2 prints only the new items (1748 ms)
+✔ remove an item already sent: needs approval + reason → VOID ticket (4268 ms)
+✔ print bill → table shows "bill printed"; bill text has total and M-Pesa till (3236 ms)
+   lines 3 → 6
+✔ transfer T2 → T8 (KDS tickets follow), then merge T1 into it (2985 ms)
+   bill KES 3,090 → KES 2,740 part KKC1-001854
+✔ split by items: pay 1 omelette now, the rest stays on the table (2772 ms)
+✔ split equally between 3: payment screen shows shares; full payment frees the table (3721 ms)
+✔ counter sale stays a normal retail sale (order type Counter) (2075 ms)
+✔ takeaway from the Sell screen: name + phone → queue → send → statuses → pay (5129 ms)
+✔ delivery: address + rider required details, appears with rider (1327 ms)
+   tickets 9 bar 3
+✔ kitchen display: open tickets per station with timers; bump and recall (2357 ms)
+✔ waiter mode: lands on tables, opens a table, payment needs a cashier/manager PIN (3523 ms)
+   VIP 1 at 30 330
+✔ edit layout: add a table, drag it, rename; empty state offers a typical layout (2261 ms)
+✔ service charge on dine-in only (setting) adds to table bills, not counter sales (3143 ms)
+✔ bar demo: tables + bar station tickets (2565 ms)
+flows-restaurant: no console errors
+===== node qa/scripts/flows-services.mjs
+✔ adding a service pops the staff picker; chip on the line changes who did it (3104 ms)
+    EN | Esther Njeri | 13 services · KES 11,650 · 30% | KES 3,845
+✔ commission report: today, by staff (service rate 40% beats staff 30%), detail, print + CSV (2329 ms)
+✔ settings: commission per staff and per service are saved (1334 ms)
+✔ appointments: today list (seeded), book a client, clash warning for same staff & time (3460 ms)
+✔ client arrived → sale opens with service, stylist and client → paid → appointment done (1958 ms)
+✔ home shows today’s appointments (627 ms)
+✔ cyber / print shop: adding services does not interrupt with a staff picker (1478 ms)
+flows-services: no console errors
+===== node qa/scripts/flows-quotes.mjs
+✔ seeded quotes in every state and invoices with balances (996 ms)
+    Q-JHB1-0008 32903
+✔ new quote: customer, items by search, qty, price change, discount, validity → saved as draft (2946 ms)
+✔ print A4 quotation; WhatsApp marks it sent (1395 ms)
+✔ convert to invoice → credit sale with due date; A4 invoice shows M-Pesa + bank + balance (1831 ms)
+✔ invoices: receive payment (oldest first) → paid; delivery note (3069 ms)
+✔ convert a quote to a cash sale: cart gets the lines + customer; quote marked sold (1789 ms)
+✔ credit limit: invoicing above the customer limit asks for manager approval (2105 ms)
+✔ settings: payment terms + bank details appear on invoices (2009 ms)
+✔ wholesale demo: quotes module on, quotes seeded (1900 ms)
+flows-quotes: no console errors
+===== node qa/scripts/flows-kds-sync.mjs
+✔ restaurant trial on device A (wizard + template menu) → typical table layout (4688 ms)
+✔ A: open T1, add food + drink, send to kitchen → pushed to the cloud (3734 ms)
+✔ B (kitchen tablet) signs in → KDS shows both tickets from A (1008 ms)
+✔ B bumps both tickets → A sees the order as "Food ready" (3590 ms)
+✔ offline: A sends round 2 with no network (own KDS shows it, outbox queued), B gets it after reconnect (4475 ms)
+✔ A pays the table; B sees the order closed (paid) (3484 ms)
+flows-kds-sync: no console errors
+===== node qa/scripts/flows-demo-embed.mjs
+✔ product page iframe runs the demo without remembering it (1648 ms)
+✔ then "Start free trial" (/pos/?trial=1) opens the trial form, not the demo (176 ms)
+✔ /pos/, /pos/?ref=AG-… and /pos/?welcome=1 all show Welcome after the iframe demo (835 ms)
+✔ "Start free trial" inside the embedded demo opens the full app with the trial form (385 ms)
+✔ full-screen demo: reload stays in the demo, a new tab shows Welcome, "Leave demo" → Welcome (2083 ms)
+✔ a real business on this device always wins over the demo (1377 ms)
+flows-demo-embed: no console errors
+===== node qa/scripts/first-time-cashier-p2.mjs
+✔ [restaurant] waiter signs in with her PIN and lands on the tables (652 ms)
+✔ [restaurant] waiter opens a free table for 2 and adds food (with a side) and a drink (1524 ms)
+✔ [restaurant] waiter taps "Send to kitchen" → kitchen and bar tickets (1596 ms)
+✔ [restaurant] kitchen display: tap Done on the ticket → the table shows the food is ready (1368 ms)
+✔ [restaurant] waiter prints the bill (1630 ms)
+✔ [restaurant] cashier takes payment: table → Pay → Exact → New sale; the table is free again (3827 ms)
+   Diclofenac 50mg (strip 10): sold from batch B54240 (expires 2027-09-12); later batches: B36701 2028-08-08
+✔ [pharmacy] cashier sells a batch-tracked medicine → the earliest-expiry batch leaves stock (FEFO) (2597 ms)
+first-time-cashier-p2: no console errors
+===== node qa/scripts/perf.mjs
+{
+ "core_js_gz_kb": 191.5,
+ "core_css_gz_kb": 14.4,
+ "first_load_welcome_ms": 253,
+ "demo_seed_ms": 2773,
+ "reload_and_index_20k_ms": 937,
+ "catalogue_size": 20074,
+ "search": [
+  {
+   "q": "milk",
+   "median_ms": 1.2,
+   "max_ms": 1.5,
+   "hits": 40
+  },
+  {
+   "q": "kabras sugar",
+   "median_ms": 1,
+   "max_ms": 6.7,
+   "hits": 1
+  },
+  {
+   "q": "jogo",
+   "median_ms": 0.7,
+   "max_ms": 1,
+   "hits": 40
+  },
+  {
+   "q": "premium soap 1kg",
+   "median_ms": 7.4,
+   "max_ms": 8.2,
+   "hits": 0
+  },
+  {
+   "q": "6160000012345",
+   "median_ms": 0.5,
+   "max_ms": 0.6,
+   "hits": 1
+  },
+  {
+   "q": "P1999",
+   "median_ms": 0.3,
+   "max_ms": 0.5,
+   "hits": 11
+  },
+  {
+   "q": "brokside",
+   "median_ms": 1.4,
+   "max_ms": 1.6,
+   "hits": 40
+  },
+  {
+   "q": "oil 2l",
+   "median_ms": 2.9,
+   "max_ms": 3.6,
+   "hits": 40
+  },
+  {
+   "q": "zzzz",
+   "median_ms": 2.3,
+   "max_ms": 2.6,
+   "hits": 0
+  },
+  {
+   "q": "tea",
+   "median_ms": 0.5,
+   "max_ms": 0.6,
+   "hits": 40
+  }
+ ],
+ "search_worst_median_ms": 7.4,
+ "typed_search_ms": [
+  22,
+  30.5,
+  31.3
+ ],
+ "sale_complete_offline_ms": [
+  25,
+  46,
+  44,
+  33,
+  39,
+  42,
+  35,
+  26
+ ],
+ "sale_complete_offline_median_ms": 39
+}
+✔ performance targets met
+perf: no console errors
+===== node qa/scripts/first-time-cashier.mjs
+✔ cashier signs in by tapping her name and the PIN shown (356 ms)
+✔ opens Sell from the menu and follows the tour (2165 ms)
+✔ cash sale by tapping a product, Pay, Exact, New sale (1320 ms)
+✔ M-Pesa sale: Pay, M-Pesa, type code, Complete sale (1411 ms)
+✔ return: find receipt from the Sell screen, manager approves with PIN pad (1866 ms)
+✔ removing an item can be undone (604 ms)
+returns recorded by cashier session: 1
+untranslated strings seen: none
+first-time-cashier (Kiswahili): no console errors
+===== node qa/scripts/first-time-cashier-p2.mjs
+✔ [restaurant] waiter signs in with her PIN and lands on the tables (673 ms)
+✔ [restaurant] waiter opens a free table for 2 and adds food (with a side) and a drink (1364 ms)
+✔ [restaurant] waiter taps "Send to kitchen" → kitchen and bar tickets (1582 ms)
+✔ [restaurant] kitchen display: tap Done on the ticket → the table shows the food is ready (1314 ms)
+✔ [restaurant] waiter prints the bill (1635 ms)
+✔ [restaurant] cashier takes payment: table → Pay → Exact → New sale; the table is free again (3859 ms)
+   Diclofenac 50mg (strip 10): sold from batch B54240 (expires 2027-09-12); later batches: B36701 2028-08-08
+✔ [pharmacy] cashier sells a batch-tracked medicine → the earliest-expiry batch leaves stock (FEFO) (2711 ms)
+first-time-cashier-p2 (Kiswahili): no console errors
+===== node qa/scripts/upgrade-v1.mjs
+   v1 live: 55 products, 1 users, outbox 56; v1 demo: 2047 sales
+✔ Phase 1 build: start a trial business (live) and add the template products; open a demo (2659 ms)
+   update prompt shown: true
+   v2 live: 55 products, 1 users, audit 2→2, tables 33
+✔ Phase 2 build in the same profile: the update prompt installs it, the database upgrades to v2, data intact (35416 ms)
+   v2 demo: 2047 sales kept
+✔ the old demo database upgrades too (same demo type keeps its history) (354 ms)
+===== node qa/scripts/flows-sync.mjs
+cloud: http://127.0.0.1:8080 app: http://localhost:4174/pos/
+✔ welcome → start free trial (with agent code from ?ref=) (1314 ms)
+   registered 01M7059NHXT4FSGNFSXXP32TG3 PP20855 licence trial 30d
+✔ setup wizard: all steps incl. template catalogue (3066 ms)
+   sale WGS1-000001 outbox after sync 0
+✔ sale on device A pushes to cloud (2450 ms)
+   B sees 1 sale(s); stock rows 1
+✔ device B signs in, pulls, sees the sale and stock (1179 ms)
+   A sees status void
+✔ void on B propagates to A (ledger row update) (3973 ms)
+   offline outbox 4
+   sync state {"state":"idle","pending":0,"lastAt":1794228160037,"error":"","running":false,"stage":"idle"}
+   pill Synced just now online true
+   after reconnect outbox 0
+   B now has 2 sales
+✔ offline: reload with no network, still sells; syncs when back (3383 ms)
+✔ licence page shows business code as M-Pesa account (474 ms)
+    STK push is not set up on the cloud. Ask the customer to pay to the till and enter the cod
+✔ M-Pesa STK without Daraja keys (501) falls back to typing the code (1184 ms)
+flows-sync: no console errors
+===== node qa/scripts/flows-onboarding.mjs
+cloud: http://127.0.0.1:8080 app: http://localhost:4174/pos/
+   pre-registered 201
+   field error: This email already has a Pentarch POS account. Use “Sign in to my busi
+✔ [real] trial form: email already registered → field error, nothing created; fix → trial starts (1201 ms)
+   re-keyed local-01M705A7… → 01M705A9Z95RRZZEJBNF05MNPK · outbox 0 · cloud has {"business":1,"branches":1,"devices":1,"users":1,"categories":6,"products":1,"stock_moves":1,"sales":1,"audit":4}
+✔ [real] trial started offline → sells → registers when back online (4220 ms)
+   server seeded business: {"name":"Mama Njeri Salon","type":"salon","modules":false,"updated_at":1}
+   cloud business now has modules + settings; products 34
+✔ [real] website-started trial: first sign-in runs the wizard and completes the minimal business (5666 ms)
+flows-onboarding: no console errors
+===== node qa/scripts/visual.mjs desk touch phone
+visual desk: no console errors
+visual touch: no console errors
+visual phone: no console errors
+===== node qa/scripts/visual.mjs desk phone
+visual desk: no console errors
+visual phone: no console errors
+untranslated strings seen (0):
+===== node qa/scripts/visual-reports.mjs desk touch phone
+desk report build ms {"sales":77,"products":6,"categories":3,"staff":2,"payments":8,"hours":129,"customers":63,"profit":9,"vat":100,"pnl":4,"stock":6,"movement":48,"low-stock":4,"expiry":1,"dead-stock":1,"purchases":3,"supplier-balances":4,"aging":50,"statement":37,"expenses":8,"shifts":6,"exceptions":41,"commission":5,"audit":12}
+visual-reports desk: no console errors
+touch report build ms {"sales":94,"products":15,"categories":6,"staff":4,"payments":8,"hours":134,"customers":66,"profit":5,"vat":116,"pnl":4,"stock":10,"movement":23,"low-stock":4,"expiry":1,"dead-stock":181,"purchases":4,"supplier-balances":4,"aging":42,"statement":33,"expenses":6,"shifts":6,"exceptions":11,"commission":5,"audit":11}
+visual-reports touch: no console errors
+phone report build ms {"sales":112,"products":6,"categories":6,"staff":5,"payments":3,"hours":114,"customers":83,"profit":4,"vat":97,"pnl":5,"stock":9,"movement":14,"low-stock":1,"expiry":1,"dead-stock":198,"purchases":5,"supplier-balances":3,"aging":57,"statement":32,"expenses":6,"shifts":19,"exceptions":21,"commission":3,"audit":12}
+visual-reports phone: no console errors
+===== node qa/scripts/visual-reports.mjs desk phone
+desk report build ms {"sales":92,"products":11,"categories":5,"staff":8,"payments":7,"hours":165,"customers":72,"profit":4,"vat":129,"pnl":7,"stock":4,"movement":51,"low-stock":3,"expiry":2,"dead-stock":219,"purchases":5,"supplier-balances":5,"aging":59,"statement":35,"expenses":9,"shifts":10,"exceptions":29,"commission":4,"audit":10}
+visual-reports desk: no console errors
+phone report build ms {"sales":78,"products":9,"categories":6,"staff":4,"payments":5,"hours":121,"customers":77,"profit":3,"vat":111,"pnl":5,"stock":5,"movement":28,"low-stock":2,"expiry":1,"dead-stock":180,"purchases":2,"supplier-balances":2,"aging":36,"statement":30,"expenses":5,"shifts":5,"exceptions":21,"commission":4,"audit":12}
+visual-reports phone: no console errors
+untranslated strings seen (4):
+  "po.create"
+  "purchase.receive"
+  "stock.count"
+  "transfer.send"
+===== node qa/scripts/visual-inventory.mjs desk touch phone
+visual-inventory desk en: no console errors
+visual-inventory touch en: no console errors
+visual-inventory phone en: no console errors
+===== node qa/scripts/visual-inventory.mjs desk phone
+visual-inventory desk sw: no console errors
+visual-inventory phone sw: no console errors
+untranslated strings seen (0):
+===== node qa/scripts/visual-p2.mjs desk touch phone
+visual-p2: no console errors
+===== node qa/scripts/visual-p2.mjs desk phone
+untranslated strings seen (0):
+visual-p2: no console errors
+===== summary
+passed steps: 178   failed steps: 0

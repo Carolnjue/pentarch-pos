@@ -1,0 +1,101 @@
+/* Pentarch POS — public shortcodes. Everything scoped under .ppc-* so the site theme is untouched. */
+/* Self-hosted brand fonts (no external requests). */
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/dm-sans-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 500 600; font-display: swap; src: url(fonts/dm-sans-latin-600-normal.woff2) format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/dm-sans-latin-700-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Bricolage Grotesque'; font-style: normal; font-weight: 600 700; font-display: swap; src: url(fonts/bricolage-grotesque-latin-700-normal.woff2) format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400 500; font-display: swap; src: url(fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2'); }
+.ppc-demo, .ppc-trial-link {
+	--ppc-ink: #0A1530; --ppc-ink-2: #101E40; --ppc-navy: #1F3C7A;
+	--ppc-coral: #EE4B3B; --ppc-coral-d: #C9301F; --ppc-sun: #F6B22C; --ppc-teal: #14B1AC; --ppc-teal-d: #0A7F7B;
+	--ppc-paper: #F7F5F0; --ppc-paper-2: #EFEBE3; --ppc-line: #E4E0D7; --ppc-text: #121A2E; --ppc-body: #3D475C; --ppc-mute: #646E82;
+	--ppc-grad: linear-gradient(100deg, #EE4B3B 0%, #F6B22C 48%, #14B1AC 100%);
+}
+.ppc-demo {
+	position: relative; box-sizing: border-box; max-width: 760px; margin: 0 auto; background: #fff;
+	border: 1px solid var(--ppc-line); border-radius: 18px; overflow: hidden; color: var(--ppc-text);
+	font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.5;
+	box-shadow: 0 1px 2px rgba(10, 21, 48, .04), 0 18px 40px -22px rgba(10, 21, 48, .28);
+	text-align: left;
+}
+.ppc-demo *, .ppc-demo *::before, .ppc-demo *::after { box-sizing: border-box; }
+.ppc-demo__strip { height: 5px; background: var(--ppc-grad); }
+.ppc-demo__form, .ppc-demo__ok { padding: 28px 30px 30px; margin: 0; }
+.ppc-demo__head { margin: 0 0 20px; }
+.ppc-demo .ppc-demo__title {
+	font-family: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif; font-weight: 700; font-size: 26px; line-height: 1.15;
+	letter-spacing: -.01em; color: var(--ppc-ink); margin: 0 0 6px; padding: 0; text-transform: none;
+}
+.ppc-demo .ppc-demo__sub { margin: 0; color: var(--ppc-body); font-size: 15.5px; }
+.ppc-demo__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+.ppc-demo .ppc-f { display: flex; flex-direction: column; gap: 6px; margin: 0; font-weight: 400; }
+.ppc-demo .ppc-f--full { grid-column: 1 / -1; }
+.ppc-demo .ppc-f__l { font-size: 13.5px; font-weight: 600; color: var(--ppc-text); letter-spacing: .005em; }
+.ppc-demo .ppc-f__l i { color: var(--ppc-coral-d); font-style: normal; }
+.ppc-demo .ppc-f__l em { color: var(--ppc-mute); font-style: normal; font-weight: 400; }
+.ppc-demo input[type=text], .ppc-demo input[type=tel], .ppc-demo input[type=email], .ppc-demo input[type=date], .ppc-demo select, .ppc-demo textarea {
+	-webkit-appearance: none; appearance: none; width: 100%; min-height: 48px; margin: 0; padding: 11px 14px;
+	font: inherit; font-size: 16px; color: var(--ppc-text); background: var(--ppc-paper); border: 1.5px solid var(--ppc-line);
+	border-radius: 11px; box-shadow: none; outline: none; transition: border-color .15s, box-shadow .15s, background-color .15s;
+}
+.ppc-demo select {
+	padding-right: 40px; cursor: pointer;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23646E82' stroke-width='1.8' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+	background-repeat: no-repeat; background-position: right 14px center;
+}
+.ppc-demo textarea { min-height: 92px; resize: vertical; line-height: 1.45; }
+.ppc-demo input::placeholder, .ppc-demo textarea::placeholder { color: #8b93a3; opacity: 1; }
+.ppc-demo input:hover, .ppc-demo select:hover, .ppc-demo textarea:hover { border-color: #cfc9bc; }
+.ppc-demo input:focus, .ppc-demo select:focus, .ppc-demo textarea:focus {
+	border-color: var(--ppc-navy); background-color: #fff; box-shadow: 0 0 0 4px rgba(31, 60, 122, .14);
+}
+.ppc-demo .ppc-f.is-invalid input, .ppc-demo .ppc-f.is-invalid select { border-color: var(--ppc-coral-d); background-color: #fff7f6; }
+.ppc-demo .ppc-f__e { display: none; font-size: 13px; color: var(--ppc-coral-d); font-weight: 500; }
+.ppc-demo .ppc-f.is-invalid .ppc-f__e { display: block; }
+.ppc-hp { position: absolute !important; left: -10000px !important; width: 1px; height: 1px; overflow: hidden; }
+.ppc-demo__foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 22px; }
+.ppc-demo .ppc-demo__note { margin: 0; color: var(--ppc-mute); font-size: 14px; }
+.ppc-demo__alert { margin-top: 16px; padding: 12px 14px; border-radius: 10px; background: #fff1ef; color: #8a1f13; border: 1px solid #f6c9c3; font-size: 14.5px; }
+
+/* Buttons (shared with [pentarch_pos_trial_link]) */
+.ppc-btn {
+	--ppc-coral-d: #C9301F; --ppc-ink: #0A1530; --ppc-teal-d: #0A7F7B;
+	display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 50px; padding: 12px 24px;
+	border-radius: 12px; border: 0; cursor: pointer; text-decoration: none !important; font-family: 'DM Sans', system-ui, sans-serif;
+	font-weight: 700; font-size: 16px; line-height: 1.1; letter-spacing: .005em;
+	transition: transform .15s, box-shadow .15s, background-color .15s, color .15s;
+}
+.ppc-btn:focus-visible { outline: 3px solid #1F3C7A; outline-offset: 3px; }
+.ppc-btn--primary { background: var(--ppc-coral-d); color: #fff !important; box-shadow: 0 8px 18px -8px rgba(201, 48, 31, .7); }
+.ppc-btn--primary:hover { background: #b2281a; transform: translateY(-1px); box-shadow: 0 12px 22px -10px rgba(201, 48, 31, .8); }
+.ppc-btn--dark { background: var(--ppc-ink); color: #fff !important; }
+.ppc-btn--dark:hover { background: #182A55; transform: translateY(-1px); }
+.ppc-btn--ghost { background: transparent; color: var(--ppc-ink) !important; box-shadow: inset 0 0 0 1.5px #cfc9bc; }
+.ppc-btn--ghost:hover { box-shadow: inset 0 0 0 1.5px var(--ppc-ink); }
+.ppc-btn--wa { background: var(--ppc-teal-d); color: #fff !important; }
+.ppc-btn--wa:hover { background: #086663; transform: translateY(-1px); }
+.ppc-btn[disabled] { opacity: .75; cursor: progress; transform: none; }
+.ppc-btn__spin { display: none; width: 18px; height: 18px; border-radius: 50%; border: 2.5px solid rgba(255, 255, 255, .45); border-top-color: #fff; animation: ppc-spin .7s linear infinite; }
+.ppc-btn.is-busy .ppc-btn__spin { display: inline-block; }
+@keyframes ppc-spin { to { transform: rotate(360deg); } }
+
+/* Success */
+.ppc-demo__ok { text-align: center; animation: ppc-in .25s ease-out; }
+.ppc-demo__ok:focus { outline: none; }
+.ppc-demo__tick { width: 64px; height: 64px; border-radius: 50%; margin: 6px auto 16px; display: grid; place-items: center; color: #fff; background: var(--ppc-teal-d); box-shadow: 0 0 0 8px rgba(20, 177, 172, .14); }
+.ppc-demo__ok .ppc-demo__sub { max-width: 470px; margin: 0 auto; }
+.ppc-demo__ref { font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; color: var(--ppc-ink); background: var(--ppc-paper-2); padding: 2px 8px; border-radius: 6px; letter-spacing: .04em; }
+.ppc-demo__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+@keyframes ppc-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 640px) {
+	.ppc-demo { border-radius: 14px; }
+	.ppc-demo__form, .ppc-demo__ok { padding: 22px 18px 24px; }
+	.ppc-demo__grid { grid-template-columns: 1fr; gap: 12px; }
+	.ppc-demo .ppc-demo__title { font-size: 22px; }
+	.ppc-demo__foot .ppc-btn { width: 100%; }
+	.ppc-demo__actions .ppc-btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.ppc-demo *, .ppc-btn { transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-09T13:07:38.748Z",
+  "zip": "/home/claude/pos/cloud/pentarch-pos-cloud.zip",
+  "size": 2210023,
+  "results": [
+    {
+      "name": "Admin login",
+      "ok": true
+    },
+    {
+      "name": "Deactivate the installed copy and remove it (symlink unlinked, never deleted through WordPress)",
+      "ok": true
+    },
+    {
+      "name": "Upload the zip in Plugins → Add New → Upload Plugin, Install Now, Activate",
+      "ok": true
+    },
+    {
+      "name": "Health: /public/ping 1.1.0, /public/config prices incl. extra_till, every admin screen renders",
+      "ok": true
+    },
+    {
+      "name": "POS through WordPress: /pos/ Welcome, demo opens (supermarket)",
+      "ok": true
+    },
+    {
+      "name": "POS: trial registration (/pos/?trial=1) → business on the cloud",
+      "ok": true
+    },
+    {
+      "name": "POS: template products, a cash sale, sync → the sale is on the cloud",
+      "ok": true
+    },
+    {
+      "name": "Agent portal through WordPress: an approved agent signs in",
+      "ok": true
+    },
+    {
+      "name": "Demo-booking form shortcode on a new test page books a demo",
+      "ok": true
+    }
+  ],
+  "errors": []
+}

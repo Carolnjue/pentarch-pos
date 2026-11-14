@@ -1,0 +1,19 @@
+/* Quotes & invoices */
+.qe-add { position: relative; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.qe-res { position: absolute; left: 14px; right: 14px; top: calc(100% - 6px); z-index: 20; background: #fff; border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--sh-3); max-height: 340px; overflow: auto; }
+.ql-list { padding: 4px 0; }
+.ql { display: grid; grid-template-columns: minmax(0, 1fr) 84px 112px 96px 112px 40px; gap: 8px; align-items: center; padding: 8px 14px; border-bottom: 1px solid #efece5; }
+.ql:last-child { border-bottom: 0; }
+.ql-h { font-size: 12px; font-weight: 700; color: var(--mute); text-transform: uppercase; letter-spacing: .05em; background: #fbfaf7; }
+.ql .num { text-align: right; }
+.ql .input { min-height: 40px; padding: 0 8px; }
+.ql-n { min-width: 0; }
+.qe-tot .row { padding: 3px 0; }
+.qe-grand { border-top: 2px solid var(--ink); margin-top: 6px; padding-top: 8px !important; font: 700 17px var(--f-head); }
+.qe-grand b { font-size: 24px; }
+@media (max-width: 720px) {
+  .ql { grid-template-columns: 1fr 1fr 1fr 40px; grid-template-areas: 'n n n x' 'q p d d' 'a a a a'; row-gap: 6px; }
+  .ql-h { display: none; }
+  .ql [data-l]::before { content: attr(data-l); display: block; text-align: left; font-size: 11px; font-weight: 700; color: var(--mute); margin-bottom: 2px; }
+  .ql > :nth-child(1) { grid-area: n; } .ql > :nth-child(2) { grid-area: q; } .ql > :nth-child(3) { grid-area: p; } .ql > :nth-child(4) { grid-area: d; } .ql > :nth-child(5) { grid-area: a; } .ql > :nth-child(6) { grid-area: x; }
+}

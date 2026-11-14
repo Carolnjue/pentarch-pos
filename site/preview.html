@@ -1,0 +1,1185 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pentarch POS – Pentarch Communications</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>@font-face{font-family:'Bricolage Grotesque';font-weight:600;font-display:swap;src:url(/pos/assets/bricolage-grotesque-latin-600-normal-nxTgbNFE.woff2) format('woff2')}@font-face{font-family:'Bricolage Grotesque';font-weight:700;font-display:swap;src:url(/pos/assets/bricolage-grotesque-latin-700-normal-gtcctNPv.woff2) format('woff2')}@font-face{font-family:'Bricolage Grotesque';font-weight:800;font-display:swap;src:url(/pos/assets/bricolage-grotesque-latin-800-normal-J50vIsBe.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-weight:400;font-display:swap;src:url(/pos/assets/dm-sans-latin-400-normal-CW0RaeGs.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-weight:500;font-display:swap;src:url(/pos/assets/dm-sans-latin-500-normal-B9HHJjqV.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-weight:600;font-display:swap;src:url(/pos/assets/dm-sans-latin-600-normal-Aqo67rzb.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-weight:700;font-display:swap;src:url(/pos/assets/dm-sans-latin-700-normal-DvUfVpUG.woff2) format('woff2')}@font-face{font-family:'JetBrains Mono';font-weight:500;font-display:swap;src:url(/pos/assets/jetbrains-mono-latin-500-normal-BWZEU5yA.woff2) format('woff2')}@font-face{font-family:'JetBrains Mono';font-weight:700;font-display:swap;src:url(/pos/assets/jetbrains-mono-latin-700-normal-BYuf6tUa.woff2) format('woff2')}@font-face{font-family:'JetBrains Mono';font-weight:800;font-display:swap;src:url(/pos/assets/jetbrains-mono-latin-800-normal-D2mQHRMK.woff2) format('woff2')}body{margin:0;background:#F7F5F0}.fh{background:#0A1530;color:#fff;font-family:'DM Sans',sans-serif;border-bottom:1px solid rgba(255,255,255,.08)}.fh .in{max-width:1200px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:20px}.fh b{font:700 21px 'Bricolage Grotesque',sans-serif}.fh nav{display:flex;gap:22px;font-size:15px;opacity:.9}.fh nav a{color:#fff;text-decoration:none}@media(max-width:760px){.fh nav{display:none}}.ff{background:#060D20;color:rgba(255,255,255,.7);font:14px 'DM Sans',sans-serif;padding:40px 20px;text-align:center}</style></head><body>
+<header class="fh"><div class="in"><b>Pentarch</b><nav><a href="#">Home</a><a href="#">Services</a><a href="#">Systems</a><a href="#">Training</a><a href="#">Contact</a></nav></div></header>
+<style>
+/* Pentarch POS product page — every rule scoped under .ppos */
+.ppos{--ink:#0A1530;--ink-2:#101E40;--ink-3:#182A55;--navy:#1F3C7A;--coral:#EE4B3B;--coral-d:#C9301F;--sun:#F6B22C;--sun-d:#B97A00;--teal:#14B1AC;--teal-d:#0A7F7B;--paper:#F7F5F0;--paper-2:#EFEBE3;--line:#E4E0D7;--text:#121A2E;--body:#3D475C;--mute:#646E82;--grad:linear-gradient(100deg,#EE4B3B 0%,#F6B22C 48%,#14B1AC 100%);--hf:'Bricolage Grotesque';--bf:'DM Sans';--mf:'JetBrains Mono';
+  font-family:var(--bf),'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--body);background:var(--paper);font-size:17px;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+.ppos *,.ppos *::before,.ppos *::after{box-sizing:border-box}
+.ppos h1,.ppos h2,.ppos h3,.ppos h4{font-family:var(--hf),'Bricolage Grotesque',system-ui,sans-serif;color:var(--text);line-height:1.12;letter-spacing:-.02em;margin:0;font-weight:700}
+.ppos p{margin:0}
+.ppos ul{margin:0;padding:0;list-style:none}
+.ppos a{color:inherit}
+.ppos button{font:inherit;color:inherit}
+.ppos .mono{font-family:var(--mf),'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.ppos .w{max-width:1200px;margin:0 auto;padding:0 20px}
+.ppos .sec{padding:88px 0}
+.ppos .soft{background:#fff}
+.ppos .gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ppos .ic{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ppos .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ppos :focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:6px}
+
+/* section heads */
+.ppos .eb{display:inline-flex;align-items:center;gap:8px;font:600 12.5px/1 var(--mf),ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-d)}
+.ppos .eb::before{content:"";width:22px;height:2px;background:var(--grad);border-radius:2px}
+.ppos .hd{max-width:720px;margin-bottom:44px}
+.ppos .hd h2{font-size:clamp(30px,4.2vw,46px);margin:14px 0 14px}
+.ppos .hd p{font-size:18px;color:var(--body)}
+.ppos .hd.c{margin-left:auto;margin-right:auto;text-align:center}
+
+/* buttons */
+.ppos .bt{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .18s ease,background-color .18s ease,box-shadow .18s ease,border-color .18s ease;white-space:nowrap}
+.ppos .bt .ic{width:20px;height:20px;transition:transform .18s ease}
+.ppos .bt:hover .ic.ar{transform:translateX(3px)}
+.ppos .bt.p{background:var(--coral-d);color:#fff;box-shadow:0 8px 22px -10px rgba(201,48,31,.7)}
+.ppos .bt.p:hover{background:#B0281A;transform:translateY(-2px)}
+.ppos .bt.s{background:var(--sun);color:var(--ink)}
+.ppos .bt.s:hover{background:#FFC447;transform:translateY(-2px)}
+.ppos .bt.o{border-color:currentColor;background:transparent}
+.ppos .bt.o:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
+.ppos .bt.ol{border-color:var(--line);background:#fff;color:var(--text)}
+.ppos .bt.ol:hover{border-color:var(--text);transform:translateY(-2px)}
+.ppos .bt.wa{background:var(--teal-d);color:#fff}
+.ppos .bt.wa:hover{background:#08706C;transform:translateY(-2px)}
+
+/* ---------- HERO ---------- */
+.ppos .hero{background:var(--ink);color:#fff;position:relative;padding:40px 0 72px;isolation:isolate}
+.ppos .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 50% at 85% 0%,rgba(20,177,172,.22),transparent 70%),radial-gradient(50% 45% at 5% 30%,rgba(238,75,59,.2),transparent 70%),radial-gradient(70% 40% at 50% 100%,rgba(246,178,44,.12),transparent 70%)}
+.ppos .hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(#000,transparent 75%);mask-image:linear-gradient(#000,transparent 75%)}
+.ppos .crumb{display:flex;gap:8px;align-items:center;font-size:14px;color:rgba(255,255,255,.72);margin-bottom:26px}
+.ppos .crumb a{color:rgba(255,255,255,.86);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.ppos .crumb a:hover{color:#fff;border-color:var(--sun)}
+.ppos .h-top{display:grid;gap:22px;align-items:end}
+.ppos .hero .eb{color:var(--teal)}
+.ppos .hero h1{color:#fff;font-size:clamp(32px,5vw,58px);margin-top:14px;letter-spacing:-.03em}
+.ppos .h-lead{font-size:18.5px;color:rgba(255,255,255,.82);max-width:560px}
+.ppos .h-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.ppos .hero .bt.o{color:#fff}
+.ppos .h-demo{margin-top:44px}
+.ppos .sw-l{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.ppos .sw-l span{font-size:14.5px;color:rgba(255,255,255,.75)}
+.ppos .sw-l a{display:inline-flex;gap:8px;align-items:center;font-size:14.5px;font-weight:600;color:#fff;text-decoration:none;padding:6px 2px;border-bottom:1px solid rgba(255,255,255,.35)}
+.ppos .sw-l a:hover{border-color:var(--sun);color:var(--sun)}
+.ppos .sw-l a .ic{width:17px;height:17px}
+.ppos .sw{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.25) transparent;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.ppos .sw button{display:inline-flex;align-items:center;gap:8px;flex:none;min-height:44px;padding:8px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;font-size:15px;font-weight:500;cursor:pointer;transition:background-color .18s,border-color .18s,transform .18s}
+.ppos .sw button .ic{width:18px;height:18px;color:var(--teal)}
+.ppos .sw button:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+.ppos .sw button[aria-pressed="true"]{background:#fff;color:var(--ink);border-color:#fff}
+.ppos .sw button[aria-pressed="true"] .ic{color:var(--coral-d)}
+
+/* monitor */
+.ppos .mon{position:relative;margin:6px auto 0;max-width:1080px}
+.ppos .mon::before{content:"";position:absolute;inset:8% 6% -4%;background:var(--grad);filter:blur(60px);opacity:.28;z-index:-1;border-radius:40px}
+.ppos .bez{background:linear-gradient(180deg,#26345a,#141f3d);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:12px 12px 26px;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.12);position:relative}
+.ppos .bez::after{content:"";position:absolute;left:50%;bottom:9px;width:6px;height:6px;border-radius:50%;background:#3b4a74;transform:translateX(-50%)}
+.ppos .scr{position:relative;overflow:hidden;border-radius:6px;background:var(--paper);aspect-ratio:16/9}
+.ppos .neck{width:18%;height:46px;margin:0 auto;background:linear-gradient(90deg,#141f3d,#26345a 50%,#141f3d);clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)}
+.ppos .foot{width:34%;height:12px;margin:0 auto;border-radius:10px 10px 4px 4px;background:linear-gradient(180deg,#2c3b63,#141f3d);box-shadow:0 14px 26px -8px rgba(0,0,0,.6)}
+.ppos .scr iframe{position:absolute;top:0;left:0;border:0;transform-origin:0 0;background:var(--paper)}
+.ppos .note{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-top:20px;font-size:14px;color:rgba(255,255,255,.72);text-align:center}
+.ppos .note b{color:#fff;font-weight:600}
+.ppos .note span{display:inline}
+.ppos .note .ic{width:16px;height:16px;color:var(--teal);vertical-align:-3px;margin-right:7px}
+
+/* poster (CSS mock of the Sell screen) */
+.ppos .pst{position:absolute;inset:0;display:grid;grid-template-columns:52px minmax(0,1fr) 31%;font-size:12px;color:var(--text);user-select:none}
+.ppos .pst .sb{background:var(--ink);display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:12px}
+.ppos .pst .sb i{width:22px;height:22px;border-radius:7px;background:rgba(255,255,255,.12)}
+.ppos .pst .sb i:first-child{background:var(--grad)}
+.ppos .pst .sb i.on{background:var(--coral-d)}
+.ppos .pst .mn{padding:12px 14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.ppos .pst .tb{display:flex;gap:8px;align-items:center}
+.ppos .pst .q{flex:1;height:30px;border-radius:8px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;padding:0 10px;color:var(--mute)}
+.ppos .pst .chip{height:30px;padding:0 10px;border-radius:999px;background:#E1F4F2;color:var(--teal-d);display:flex;align-items:center;font-weight:600;font-size:11px;white-space:nowrap}
+.ppos .pst .cats{display:flex;gap:6px;overflow:hidden}
+.ppos .pst .cats span{padding:5px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);white-space:nowrap;font-size:11px}
+.ppos .pst .cats span:first-child{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ppos .pst .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:8px;flex:1;min-height:0;overflow:hidden}
+.ppos .pst .tile{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px;min-height:0;overflow:hidden}.ppos .pst .tile em{flex:1;min-height:0;border-radius:7px;background:var(--c,var(--teal));opacity:.14;position:relative}.ppos .pst .tile i{position:absolute;margin:8px;font:700 clamp(16px,2.2vw,26px)/1 var(--hf),sans-serif;color:var(--c);font-style:normal}.ppos .pst .tile .tw2{position:relative;flex:1;min-height:0;display:flex}.ppos .pst .tile .tw2 em{flex:1}
+.ppos .pst .tile b{font-weight:600;font-size:12px;line-height:1.25}
+.ppos .pst .tile span{font-family:var(--mf),monospace;color:var(--mute);font-size:11px}
+.ppos .pst .cart{background:#fff;border-left:1px solid var(--line);padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.ppos .pst .cart h4{font-size:13px;margin-bottom:4px}
+.ppos .pst .cl{display:flex;justify-content:space-between;gap:6px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:11.5px}
+.ppos .pst .cl span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ppos .pst .cl b{font-family:var(--mf),monospace;font-weight:500}
+.ppos .pst .tt{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;font-weight:700}
+.ppos .pst .tt b{font-family:var(--mf),monospace;font-size:16px}
+.ppos .pst .pay{height:34px;border-radius:9px;background:var(--coral-d);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12.5px}
+.ppos .ovl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;background:rgba(10,21,48,.42);text-align:center;cursor:pointer;border:0;width:100%;color:#fff}
+.ppos .ovc{display:flex;flex-direction:column;align-items:center;gap:12px;background:rgba(10,21,48,.94);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:26px 30px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);max-width:440px}
+.ppos .ovl .play{width:76px;height:76px;border-radius:50%;background:var(--coral-d);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(201,48,31,.25);transition:transform .2s ease,box-shadow .2s ease}
+.ppos .ovl .play .ic{width:30px;height:30px;color:#fff;margin-left:4px}
+.ppos .ovl:hover .play{transform:scale(1.07);box-shadow:0 0 0 16px rgba(201,48,31,.2)}
+.ppos .ovl strong{font:700 clamp(19px,2.4vw,26px)/1.2 var(--hf),sans-serif;color:#fff}
+.ppos .ovl small{font-size:14.5px;color:rgba(255,255,255,.88);max-width:420px}
+.ppos .ld{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:var(--paper);color:var(--text);font-weight:600;font-size:15px}
+.ppos .ld i{width:44px;height:44px;border-radius:50%;border:4px solid var(--line);border-top-color:var(--coral-d);animation:ppspin .8s linear infinite}
+.ppos .scr.loading .ld{display:flex}
+@keyframes ppspin{to{transform:rotate(360deg)}}
+
+/* ---------- TRUST ---------- */
+.ppos .trust{background:var(--ink-2);color:#fff;border-top:1px solid rgba(255,255,255,.08)}
+.ppos .trust ul{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 34px;padding-top:22px;padding-bottom:22px}
+.ppos .trust li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15.5px}
+.ppos .trust .ic{color:var(--sun)}
+
+/* ---------- BUSINESS TYPES ---------- */
+.ppos .types{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.ppos .ty{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;position:relative;overflow:hidden}
+.ppos .ty::after{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.ppos .ty:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(10,21,48,.35);border-color:transparent}
+.ppos .ty:hover::after{transform:scaleX(1)}
+.ppos .ty-h{display:flex;gap:12px;align-items:center}
+.ppos .ty-h .bx{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--paper);color:var(--coral-d);transition:background-color .2s,color .2s}
+.ppos .ty:hover .bx{background:var(--ink);color:var(--sun)}
+.ppos .ty h3{font-size:19px}
+.ppos .ty li{display:flex;gap:9px;font-size:15px;line-height:1.45;padding:3px 0}
+.ppos .ty li .ic{width:18px;height:18px;color:var(--teal-d);margin-top:2px}
+.ppos .ty .tr{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:14.5px;font-weight:600;color:var(--coral-d);background:none;border:0;padding:8px 0;cursor:pointer;min-height:40px}
+.ppos .ty .tr .ic{width:17px;height:17px;transition:transform .18s}
+.ppos .ty .tr:hover .ic{transform:translateX(3px)}
+.ppos .more{margin-top:22px;font-size:15.5px;color:var(--mute);text-align:center}
+
+/* ---------- FEATURE TOUR ---------- */
+.ppos .tour{display:grid;gap:28px}
+.ppos .tabs{display:flex;gap:8px;overflow-x:auto;padding:5px 5px 10px;scrollbar-width:thin}
+.ppos .tab{display:flex;align-items:center;gap:10px;flex:none;min-height:46px;padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:15px;color:var(--text);cursor:pointer;text-align:left;transition:background-color .18s,border-color .18s,color .18s}
+.ppos .tab .ic{color:var(--teal-d)}
+.ppos .tab:hover{border-color:var(--text)}
+.ppos .tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ppos .tab[aria-selected="true"] .ic{color:var(--sun)}
+.ppos .pnl{display:grid;gap:30px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:26px}
+.ppos .pnl[hidden]{display:none}
+.ppos .pnl.in{animation:ppfade .35s ease}
+@keyframes ppfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ppos .pnl h3{font-size:clamp(24px,3vw,30px);margin-bottom:10px}
+.ppos .pnl p{margin-bottom:16px}
+.ppos .chk li{display:flex;gap:10px;padding:5px 0;font-size:15.5px;line-height:1.5}
+.ppos .chk li .ic{width:19px;height:19px;color:var(--teal-d);margin-top:2px}
+
+/* mock UI cards */
+.ppos .mk{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 24px 50px -30px rgba(10,21,48,.4);font-size:14px;color:var(--text);max-width:440px;width:100%;justify-self:center}
+.ppos .mk-h{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;font-weight:700}
+.ppos .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:#E1F4F2;color:var(--teal-d);white-space:nowrap}
+.ppos .pill.w{background:#FDF0D5;color:#7A5200}
+.ppos .pill.r{background:#FBE4E1;color:var(--coral-d)}
+.ppos .pill.n{background:#E6EBF5;color:var(--navy)}
+.ppos .pill i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.ppos .ln{display:grid;grid-template-columns:1fr auto auto;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px;align-items:center}
+.ppos .ln .m{color:var(--mute);font-family:var(--mf),monospace;font-size:12.5px}
+.ppos .ln b{font-family:var(--mf),monospace;font-weight:600;text-align:right}
+.ppos .tot{display:flex;justify-content:space-between;align-items:baseline;margin:12px 0;font-weight:700}
+.ppos .tot b{font:700 22px var(--mf),monospace}
+.ppos .pays{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ppos .pays span{text-align:center;padding:10px 4px;border-radius:10px;border:1px solid var(--line);font-weight:600;font-size:13px}
+.ppos .pays span.on{background:var(--teal-d);color:#fff;border-color:var(--teal-d)}
+.ppos .code{margin-top:10px;display:flex;justify-content:space-between;gap:8px;align-items:center;padding:10px 12px;border-radius:10px;background:var(--paper);font-size:13px;flex-wrap:wrap}
+.ppos .bar{height:8px;border-radius:8px;background:var(--paper-2);overflow:hidden;margin-top:6px}
+.ppos .bar i{display:block;height:100%;border-radius:8px;background:var(--teal)}
+.ppos .bar i.lo{background:var(--coral)}
+.ppos .bar i.md{background:var(--sun)}
+.ppos .st{padding:10px 0;border-bottom:1px dashed var(--line)}
+.ppos .st-t{display:flex;justify-content:space-between;gap:8px;font-size:13.5px;align-items:center}
+.ppos .st-t .mono{font-size:12.5px;color:var(--mute)}
+.ppos .cu{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.ppos .av{width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
+.ppos .cu small{display:block;color:var(--mute);font-size:12.5px}
+.ppos .kv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.ppos .kv div{background:var(--paper);border-radius:10px;padding:10px 12px}
+.ppos .kv small{display:block;color:var(--mute);font-size:12px}
+.ppos .kv b{font:700 17px var(--mf),monospace}
+.ppos .ag{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;align-items:end;height:74px;margin-bottom:6px}
+.ppos .ag i{display:block;border-radius:6px 6px 2px 2px;background:var(--navy)}
+.ppos .agl{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font:500 11px var(--mf),monospace;color:var(--mute);text-align:center;margin-bottom:12px}
+.ppos .mb{display:flex;gap:8px}
+.ppos .mb span{flex:1;text-align:center;padding:9px 6px;border-radius:9px;font-size:12.5px;font-weight:600;border:1px solid var(--line)}
+.ppos .mb span.p{background:var(--coral-d);color:#fff;border-color:var(--coral-d)}
+.ppos .lg{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.ppos .lg time{font:500 12px var(--mf),monospace;color:var(--mute);padding-top:2px}
+.ppos .lg small{grid-column:2;color:var(--mute);font-size:12.5px}
+.ppos .var{margin-top:12px;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:10px;background:#FBE4E1;color:#8E2014;font-size:13px;font-weight:600}
+.ppos .kp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.ppos .kp div{border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.ppos .kp small{color:var(--mute);font-size:12px;display:block}
+.ppos .kp b{font:700 18px var(--mf),monospace;display:block}
+.ppos .kp em{font-style:normal;font-size:12px;color:var(--teal-d);font-weight:600}
+.ppos .hrs{display:flex;align-items:flex-end;gap:5px;height:96px;padding-top:6px;border-bottom:1px solid var(--line)}
+.ppos .hrs i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--teal),var(--teal-d))}
+.ppos .hrs i.pk{background:linear-gradient(180deg,var(--sun),var(--coral))}
+.ppos .hl{display:flex;justify-content:space-between;font:500 11px var(--mf),monospace;color:var(--mute);margin-top:6px}
+.ppos .br{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.ppos .br b{font:600 13.5px var(--mf),monospace;text-align:right}
+.ppos .br small{color:var(--mute);font-size:12.5px}
+.ppos .trf{margin-top:12px;padding:12px;border-radius:12px;background:var(--paper);display:flex;align-items:center;gap:10px;font-size:13px;flex-wrap:wrap}
+.ppos .trf .ic{width:18px;height:18px;color:var(--coral-d)}
+.ppos .sy{display:flex;flex-direction:column;gap:10px}
+.ppos .sy-r{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px;border-radius:12px;border:1px solid var(--line);font-size:13.5px}
+.ppos .sy-r .mono{font-size:12.5px;color:var(--mute)}
+.ppos .sy-a{display:flex;justify-content:center;color:var(--mute)}
+.ppos .sy-a .ic{width:20px;height:20px}
+.ppos .lbl{width:230px;margin:6px auto 14px;border:1px dashed #B9B2A3;border-radius:8px;padding:12px 14px;background:#fff;text-align:center}
+.ppos .lbl b{display:block;font-size:13px}
+.ppos .lbl strong{display:block;font:700 22px var(--mf),monospace;margin:2px 0 6px}
+.ppos .bc{height:46px;background:repeating-linear-gradient(90deg,#121A2E 0 2px,transparent 2px 4px,#121A2E 4px 5px,transparent 5px 8px,#121A2E 8px 11px,transparent 11px 12px,#121A2E 12px 13px,transparent 13px 16px)}
+.ppos .lbl small{display:block;font:500 11px var(--mf),monospace;letter-spacing:.15em;margin-top:4px}
+.ppos .lbs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+
+/* ---------- STEPS ---------- */
+.ppos .steps{display:grid;gap:16px;counter-reset:st}
+.ppos .stp{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 22px 22px;transition:transform .2s,box-shadow .2s}
+.ppos .stp:hover{transform:translateY(-3px);box-shadow:0 20px 40px -26px rgba(10,21,48,.35)}
+.ppos .stp .n{counter-increment:st;display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.ppos .stp .n::before{content:"0" counter(st);font:700 15px var(--mf),monospace;color:var(--coral-d)}
+.ppos .stp .n .ic{width:30px;height:30px;color:var(--navy)}
+.ppos .stp h3{font-size:20px;margin-bottom:8px}
+.ppos .stp p{font-size:15.5px}
+
+/* ---------- PRICING ---------- */
+.ppos .trial{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;background:var(--grad);border-radius:18px;padding:3px;margin-bottom:22px}
+.ppos .trial>div{background:var(--ink);color:#fff;border-radius:16px;padding:20px 24px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;width:100%}
+.ppos .trial h3{color:#fff;font-size:21px}
+.ppos .trial p{color:rgba(255,255,255,.8);font-size:15.5px;margin-top:4px}
+.ppos .plans{display:grid;gap:18px;align-items:stretch}
+.ppos .pl{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;gap:16px;position:relative;transition:transform .22s,box-shadow .22s}
+.ppos .pl:hover{transform:translateY(-4px);box-shadow:0 26px 50px -30px rgba(10,21,48,.4)}
+.ppos .pl.ft{background:var(--ink);border-color:var(--ink);color:rgba(255,255,255,.84)}
+.ppos .pl.ft h3,.ppos .pl.ft .pr b{color:#fff}
+.ppos .pl .rib{position:absolute;top:-13px;left:24px;background:var(--sun);color:var(--ink);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;letter-spacing:.02em}
+.ppos .pl h3{font-size:22px}
+.ppos .pl .sub{font-size:15px;margin-top:-8px}
+.ppos .pr{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.ppos .pr small{font-size:14px;font-weight:600}
+.ppos .pr b{font:700 clamp(34px,4vw,42px)/1 var(--hf),sans-serif;color:var(--text);letter-spacing:-.02em}
+.ppos .pr span{font-size:14.5px}
+.ppos .pl .alt{font-size:14px;padding:10px 12px;border-radius:10px;background:var(--paper)}
+.ppos .pl.ft .alt{background:rgba(255,255,255,.08)}
+.ppos .pl ul li{display:flex;gap:10px;padding:5px 0;font-size:15px;line-height:1.45}
+.ppos .pl ul li .ic{width:18px;height:18px;color:var(--teal-d);margin-top:2px}
+.ppos .pl.ft ul li .ic{color:var(--teal)}
+.ppos .pl .bt{margin-top:auto;width:100%}
+.ppos .pl .fine{font-size:13.5px;color:var(--mute)}
+.ppos .pl.ft .fine{color:rgba(255,255,255,.7)}
+.ppos .addh{margin:48px 0 16px;font-size:22px}
+.ppos .tw{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:#fff}
+.ppos table{width:100%;border-collapse:collapse;font-size:15px}
+.ppos th,.ppos td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+.ppos tr:last-child td{border-bottom:0}
+.ppos thead th{font:600 12.5px var(--mf),monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);background:var(--paper)}
+.ppos .adds td:last-child{font-family:var(--mf),monospace;font-weight:600;color:var(--text);white-space:nowrap;text-align:right}
+.ppos .adds th:last-child{text-align:right}
+.ppos .adds td b{color:var(--text);font-weight:600;display:block}
+.ppos .adds td small{color:var(--mute);font-size:14px}
+.ppos .adds tbody tr{transition:background-color .15s}
+.ppos .adds tbody tr:hover{background:#FBFAF7}
+
+/* ---------- DEVICES ---------- */
+.ppos .devs{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.ppos .dv{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);transition:background-color .2s,transform .2s,border-color .2s}
+.ppos .dv:hover{background:rgba(255,255,255,.09);transform:translateY(-3px);border-color:rgba(246,178,44,.5)}
+.ppos .dv .bx{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:rgba(20,177,172,.16);color:var(--teal);flex:none}
+.ppos .dv .bx .ic{width:24px;height:24px}
+.ppos .dv small{display:block;font:600 11.5px var(--mf),monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--sun)}
+.ppos .dv h3{color:#fff;font-size:17px;margin:3px 0 4px}
+.ppos .dv p{font-size:14.5px;color:rgba(255,255,255,.78);line-height:1.45}
+.ppos .dark{background:var(--ink);color:rgba(255,255,255,.82)}
+.ppos .dark .hd h2{color:#fff}
+.ppos .dark .hd p{color:rgba(255,255,255,.8)}
+.ppos .dark .eb{color:var(--teal)}
+.ppos .dnote{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:14.5px;color:rgba(255,255,255,.78)}
+.ppos .dnote span{display:inline-flex;gap:8px;align-items:center}
+.ppos .dnote .ic{width:17px;height:17px;color:var(--sun)}
+
+/* ---------- COMPARE ---------- */
+.ppos .cmp th:first-child{width:30%}
+.ppos .cmp tbody th{font-weight:600;color:var(--text);font-size:15px}
+.ppos .cmp thead th.us{background:var(--ink);color:#fff}
+.ppos .cmp td.us{background:#F1FAF9;color:var(--text);font-weight:500}
+.ppos .cmp td{color:var(--body)}
+.ppos .yn{display:flex;gap:9px;align-items:flex-start}
+.ppos .yn .ic{width:18px;height:18px;margin-top:3px}
+.ppos .yn.y .ic{color:var(--teal-d)}
+.ppos .yn.n .ic{color:var(--coral-d)}
+.ppos .yn.m .ic{color:var(--sun-d)}
+.ppos .cmp{min-width:720px}
+.ppos .cmp tbody th{position:sticky;left:0;background:#fff;z-index:1}
+.ppos .cmp thead th:first-child{position:sticky;left:0;z-index:2}
+
+/* ---------- FAQ ---------- */
+.ppos .faq{display:grid;gap:12px;max-width:880px;margin:0 auto}
+.ppos .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;transition:border-color .2s,box-shadow .2s}
+.ppos .faq details[open]{border-color:#CFC8B9;box-shadow:0 16px 30px -24px rgba(10,21,48,.35)}
+.ppos .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 20px;font:600 17px/1.35 var(--hf),sans-serif;color:var(--text);min-height:56px}
+.ppos .faq summary::-webkit-details-marker{display:none}
+.ppos .faq summary .ic{color:var(--coral-d);transition:transform .25s}
+.ppos .faq details[open] summary .ic{transform:rotate(180deg)}
+.ppos .faq summary:hover{color:var(--coral-d)}
+.ppos .faq .a{padding:0 20px 20px;font-size:16px}
+.ppos .faq .a p+p{margin-top:10px}
+
+/* ---------- BOOK ---------- */
+.ppos .book{display:grid;gap:34px;align-items:start}
+.ppos .book .hd{margin-bottom:22px}
+.ppos .bk-l li{display:flex;gap:12px;padding:8px 0;font-size:16px}
+.ppos .bk-l li .ic{color:var(--teal-d);margin-top:2px}
+.ppos .bk-c{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.ppos .bk-f{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 30px 60px -40px rgba(10,21,48,.45);min-width:0}
+.ppos .bk-m{margin-top:18px;font-size:14.5px;color:var(--mute)}
+.ppos .bk-m a{color:var(--coral-d);font-weight:600}
+
+/* ---------- FINAL CTA ---------- */
+.ppos .fin{background:var(--ink);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.ppos .fin::before{content:"";position:absolute;inset:-40% -10% auto auto;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(238,75,59,.32),transparent 65%);z-index:-1}
+.ppos .fin::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--grad)}
+.ppos .fin .in{display:grid;gap:24px;align-items:center}
+.ppos .fin h2{color:#fff;font-size:clamp(30px,4.4vw,48px)}
+.ppos .fin p{color:rgba(255,255,255,.82);font-size:18px;margin-top:12px;max-width:560px}
+.ppos .fin .cta{display:flex;flex-wrap:wrap;gap:12px}
+.ppos .fin .bt.o{color:#fff}
+.ppos .fin .ct{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:22px;font-size:15px}
+.ppos .fin .ct a{display:inline-flex;gap:8px;align-items:center;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.ppos .fin .ct a:hover{border-color:var(--sun)}
+.ppos .fin .ct .ic{width:17px;height:17px;color:var(--sun)}
+
+/* reveal */
+.ppos.js [data-rv]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.ppos.js [data-rv].on{opacity:1;transform:none}
+
+/* responsive */
+@media (min-width:640px){
+  .ppos .steps{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px){
+  .ppos .w{padding:0 32px}
+  .ppos .h-top{grid-template-columns:1.25fr 1fr;gap:48px}
+  .ppos .h-cta{margin-top:24px}
+  .ppos .tour{grid-template-columns:250px 1fr;align-items:start}
+  .ppos .tabs{flex-direction:column;overflow:visible;padding:0}
+  .ppos .tab{width:100%}
+  .ppos .pnl{grid-template-columns:1fr 1fr;padding:36px;min-height:470px}
+  .ppos .steps{grid-template-columns:repeat(4,1fr)}
+  .ppos .plans{grid-template-columns:1.1fr 1fr 1fr}
+  .ppos .book{grid-template-columns:.9fr 1.1fr;gap:56px}
+  .ppos .fin .in{grid-template-columns:1.4fr 1fr}
+  .ppos .fin .cta{justify-content:flex-end}
+}
+@media (max-width:899px){
+  .ppos .sec{padding:64px 0}
+  .ppos .hero{padding-bottom:56px}
+}
+@media (max-width:639px){
+  .ppos{font-size:16px}
+  .ppos .w{padding:0 16px}
+  .ppos .h-cta .bt{flex:1 1 100%}
+  .ppos .bez{padding:6px 6px 18px;border-radius:12px}
+  .ppos .bez::after{bottom:6px;width:5px;height:5px}
+  .ppos .neck{height:26px}
+  .ppos .pst{grid-template-columns:1fr}
+  .ppos .pst .sb,.ppos .pst .cart{display:none}
+  .ppos .pst .grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr))}
+  .ppos .ovc{display:flex;flex-direction:column;align-items:center;gap:12px;background:rgba(10,21,48,.94);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:26px 30px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);max-width:440px}
+.ppos .ovl .play{width:64px;height:64px}
+  .ppos th,.ppos td{padding:12px 14px}
+  .ppos .trust ul{justify-content:flex-start;gap:12px 20px}
+  .ppos .trust li{font-size:14.5px;flex:1 1 40%}
+  .ppos .pnl{padding:18px}
+  .ppos .mk{padding:14px}
+  .ppos .bk-f{padding:18px}
+  .ppos .adds td:last-child{white-space:normal}
+  .ppos .types{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 14px;margin:0 -16px;scroll-padding:0 16px}
+  .ppos .ty{scroll-snap-align:start}
+  .ppos .tw.cw{overflow:visible;border:0;background:none}
+  .ppos .cmp{min-width:0;display:block}
+  .ppos .cmp thead{display:none}
+  .ppos .cmp tbody{display:grid;gap:12px}
+  .ppos .cmp tr{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .ppos .cmp tbody th:first-child{display:block;width:auto;position:static;padding:12px 14px;background:var(--paper);font-size:15.5px}
+  .ppos .cmp td{display:grid;grid-template-columns:100px 1fr;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line)}
+  .ppos .cmp td::before{content:attr(data-l);font:600 11.5px/1.5 var(--mf),monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);padding-top:2px}
+  .ppos .cmp td.us::before{color:var(--teal-d)}
+  .ppos .cmp tr td:last-child{border-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .ppos *,.ppos *::before,.ppos *::after{animation:none!important;transition:none!important}
+  .ppos.js [data-rv]{opacity:1;transform:none}
+  .ppos .ld i{border-top-color:var(--coral-d)}
+}
+</style>
+
+<div class="pc ppos" data-pos="/pos/">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="ppi-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="ppi-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="ppi-half" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></symbol>
+<symbol id="ppi-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="ppi-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="ppi-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z" fill="currentColor"/></symbol>
+<symbol id="ppi-expand" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
+<symbol id="ppi-wifioff" viewBox="0 0 24 24"><path d="M2 2l20 20M8.5 16.5a5 5 0 0 1 7 0M5 12.6a10 10 0 0 1 4.3-2.5M19 12.6a10 10 0 0 0-2.4-1.8M2 8.8a15 15 0 0 1 4.5-2.9M22 8.8A15 15 0 0 0 10.7 5M12 20h.01"/></symbol>
+<symbol id="ppi-mobile" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+<symbol id="ppi-receipt" viewBox="0 0 24 24"><path d="M5 2h14v20l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h4"/></symbol>
+<symbol id="ppi-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
+<symbol id="ppi-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="ppi-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M4 9v11h16V9M3 9h18M9.5 20v-6h5v6"/></symbol>
+<symbol id="ppi-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L22 7H6"/></symbol>
+<symbol id="ppi-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
+<symbol id="ppi-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"/></symbol>
+<symbol id="ppi-pill" viewBox="0 0 24 24"><path d="M10.5 20.5a5 5 0 0 1-7-7l10-10a5 5 0 0 1 7 7z"/><path d="M8.5 8.5l7 7"/></symbol>
+<symbol id="ppi-shirt" viewBox="0 0 24 24"><path d="M20.4 6.6 16 3.5a4 4 0 0 1-8 0L3.6 6.6l1.9 4 2.5-1V21h8V9.6l2.5 1z"/></symbol>
+<symbol id="ppi-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
+<symbol id="ppi-cake" viewBox="0 0 24 24"><path d="M4 21v-9h16v9M2 21h20M4 16c2 1.5 3.8 1.5 5.3 0 1.4 1.5 4 1.5 5.4 0 1.3 1.5 3.3 1.5 5.3 0M12 12V8"/><path d="M12 5.5c-.8 0-1.2-.6-1.2-1.2S12 2 12 2s1.2 1.7 1.2 2.3-.4 1.2-1.2 1.2z"/></symbol>
+<symbol id="ppi-utensils" viewBox="0 0 24 24"><path d="M3 2v7a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V2M6 2v20M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h3zm0 0v7"/></symbol>
+<symbol id="ppi-wine" viewBox="0 0 24 24"><path d="M8 22h8M12 15v7M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5z"/></symbol>
+<symbol id="ppi-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></symbol>
+<symbol id="ppi-truck" viewBox="0 0 24 24"><path d="M1 4h13v12H1zM14 8h4l4 4v4h-8"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></symbol>
+<symbol id="ppi-car" viewBox="0 0 24 24"><path d="M5 17H3v-5l2-5h14l2 5v5h-2M3 12h18M9.5 17h5"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></symbol>
+<symbol id="ppi-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+<symbol id="ppi-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.2.4 1.6 1.4 2.7 2.5 2.7z"/></symbol>
+<symbol id="ppi-cash" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></symbol>
+<symbol id="ppi-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5zM3 8l9 5 9-5M12 13v8"/></symbol>
+<symbol id="ppi-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+<symbol id="ppi-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="ppi-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15v2M11 11v6M15 7v10M19 12v5"/></symbol>
+<symbol id="ppi-branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2.5"/><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 7.5v9M18 10.5c0 4.5-6 3.5-10.5 7"/></symbol>
+<symbol id="ppi-sync" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16M3 12A9 9 0 0 1 18.5 5.8L21 8M21 3v5h-5M3 21v-5h5"/></symbol>
+<symbol id="ppi-barcode" viewBox="0 0 24 24"><path d="M3 5v14M6 5v14M10 5v14M13 5v14M17 5v14M21 5v14M8 5v14M19 5v14"/></symbol>
+<symbol id="ppi-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></symbol>
+<symbol id="ppi-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+<symbol id="ppi-cpu" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="1.5"/><path d="M6.5 12h.01M10 12h5M3 20h18"/></symbol>
+<symbol id="ppi-keyboard" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></symbol>
+<symbol id="ppi-ups" viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2M11.5 9l-2 3h4l-2 3"/></symbol>
+<symbol id="ppi-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M10 8v8M14 8v8M17 8v8"/></symbol>
+<symbol id="ppi-printer" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></symbol>
+<symbol id="ppi-drawer" viewBox="0 0 24 24"><path d="M2 10h20v10H2zM4 10l2-5h12l2 5M9 15h6"/></symbol>
+<symbol id="ppi-roll" viewBox="0 0 24 24"><circle cx="8" cy="12" r="5"/><circle cx="8" cy="12" r="1.5"/><path d="M8 7h13v10H8"/></symbol>
+<symbol id="ppi-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 10.5c.5 2 2 3.5 4 4l1.2-1.2 1.8.8"/></symbol>
+<symbol id="ppi-call" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="ppi-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+<symbol id="ppi-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="ppi-play2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z"/></symbol>
+<symbol id="ppi-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="ppi-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+<symbol id="ppi-cloud" viewBox="0 0 24 24"><path d="M17.5 19H7a5 5 0 1 1 1.1-9.9A6.5 6.5 0 0 1 20.6 11 4 4 0 0 1 17.5 19z"/></symbol>
+</svg>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="pp-h1">
+  <div class="w">
+    <nav class="crumb" aria-label="Breadcrumb"><a href="/systems/">Systems</a><span aria-hidden="true">/</span><span>Pentarch POS</span></nav>
+    <div class="h-top">
+      <div>
+        <span class="eb">Pentarch POS · Point of sale</span>
+        <h1 id="pp-h1">Sell, count stock and track credit, <span class="gt">even when the internet is down.</span></h1>
+      </div>
+      <div>
+        <p class="h-lead">One till system for Kenyan shops, chemists, hardware stores, restaurants, bars and salons. M-Pesa, KRA tax codes and Kiswahili are built in. Try the real system below.</p>
+        <div class="h-cta">
+          <a class="bt s" href="#pp-demo" data-act="start"><svg class="ic"><use href="#ppi-play2"/></svg>Try the demo</a>
+          <a class="bt p" href="/pos/?trial=1" data-link="trial">Start 30-day free trial<svg class="ic ar"><use href="#ppi-arrow"/></svg></a>
+          <a class="bt o" href="#book"><svg class="ic"><use href="#ppi-calendar"/></svg>Book a demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-demo" id="pp-demo">
+      <div class="sw-l">
+        <span id="pp-swl">Choose your type of business, then use the system as you would at the counter.</span>
+        <a href="/pos/?demo=1&amp;type=duka" data-link="full" target="_blank" rel="noopener"><svg class="ic"><use href="#ppi-expand"/></svg>Open full screen demo</a>
+      </div>
+      <div class="sw" role="group" aria-labelledby="pp-swl">
+        <button type="button" data-type="duka" aria-pressed="true"><svg class="ic"><use href="#ppi-store"/></svg>Shop</button>
+        <button type="button" data-type="minimart" aria-pressed="false"><svg class="ic"><use href="#ppi-cart"/></svg>Supermarket</button>
+        <button type="button" data-type="hardware" aria-pressed="false"><svg class="ic"><use href="#ppi-wrench"/></svg>Hardware</button>
+        <button type="button" data-type="agrovet" aria-pressed="false"><svg class="ic"><use href="#ppi-leaf"/></svg>Agrovet</button>
+        <button type="button" data-type="pharmacy" aria-pressed="false"><svg class="ic"><use href="#ppi-pill"/></svg>Chemist</button>
+        <button type="button" data-type="boutique" aria-pressed="false"><svg class="ic"><use href="#ppi-shirt"/></svg>Boutique</button>
+        <button type="button" data-type="electronics" aria-pressed="false"><svg class="ic"><use href="#ppi-mobile"/></svg>Phones &amp; electronics</button>
+        <button type="button" data-type="butchery" aria-pressed="false"><svg class="ic"><use href="#ppi-scale"/></svg>Butchery</button>
+        <button type="button" data-type="bakery" aria-pressed="false"><svg class="ic"><use href="#ppi-cake"/></svg>Bakery</button>
+        <button type="button" data-type="restaurant" aria-pressed="false"><svg class="ic"><use href="#ppi-utensils"/></svg>Restaurant</button>
+        <button type="button" data-type="bar" aria-pressed="false"><svg class="ic"><use href="#ppi-wine"/></svg>Bar</button>
+        <button type="button" data-type="salon" aria-pressed="false"><svg class="ic"><use href="#ppi-scissors"/></svg>Salon</button>
+        <button type="button" data-type="wholesale" aria-pressed="false"><svg class="ic"><use href="#ppi-truck"/></svg>Wholesale</button>
+        <button type="button" data-type="autospares" aria-pressed="false"><svg class="ic"><use href="#ppi-car"/></svg>Auto spares</button>
+        <button type="button" data-type="stationery" aria-pressed="false"><svg class="ic"><use href="#ppi-book"/></svg>Stationery &amp; cyber</button>
+        <button type="button" data-type="gas_water" aria-pressed="false"><svg class="ic"><use href="#ppi-flame"/></svg>Gas &amp; water</button>
+      </div>
+
+      <div class="mon">
+        <div class="bez">
+          <div class="scr" id="pp-scr">
+            <div class="pst" aria-hidden="true">
+              <div class="sb"><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
+              <div class="mn">
+                <div class="tb"><div class="q">Search or scan a barcode</div><div class="chip" id="pp-pt">Sample: General shop</div></div>
+                <div class="cats"><span>All</span><span>Favourites</span><span>Food</span><span>Drinks</span><span>Household</span><span>Personal care</span></div>
+                <div class="grid" id="pp-pg"></div>
+              </div>
+              <div class="cart">
+                <h4>Current sale</h4>
+                <div id="pp-pc"></div>
+                <div class="tt"><span>Total</span><b id="pp-ptot">KES 0</b></div>
+                <div class="pay">Pay</div>
+              </div>
+            </div>
+            <button type="button" class="ovl" id="pp-go" aria-describedby="pp-gonote">
+              <span class="ovc"><span class="play"><svg class="ic"><use href="#ppi-play"/></svg></span>
+              <strong>Start the live demo</strong>
+              <small id="pp-gonote">The full system with a sample business. Everything stays in your browser.</small></span>
+            </button>
+            <div class="ld" role="status"><i></i><span>Preparing the sample business…</span></div>
+          </div>
+        </div>
+        <div class="neck" aria-hidden="true"></div>
+        <div class="foot" aria-hidden="true"></div>
+      </div>
+      <p class="note"><span><svg class="ic"><use href="#ppi-lock"/></svg>Sample data only, nothing is sent to us</span><span><svg class="ic"><use href="#ppi-users"/></svg>If the screen locks, use PIN <b>Owner 1234</b> or <b>Cashier 1111</b></span><span><svg class="ic"><use href="#ppi-sync"/></svg>Switch business type at any time</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <ul class="w">
+    <li><svg class="ic"><use href="#ppi-wifioff"/></svg>Works offline</li>
+    <li><svg class="ic"><use href="#ppi-mobile"/></svg>M-Pesa</li>
+    <li><svg class="ic"><use href="#ppi-receipt"/></svg>KRA tax codes</li>
+    <li><svg class="ic"><use href="#ppi-globe"/></svg>English &amp; Kiswahili</li>
+    <li><svg class="ic"><use href="#ppi-pin"/></svg>Made in Nairobi</li>
+  </ul>
+</div>
+
+<!-- BUSINESS TYPES -->
+<section class="sec" id="pp-types" aria-labelledby="pp-types-h">
+  <div class="w">
+    <div class="hd" data-rv>
+      <span class="eb">Built for your business</span>
+      <h2 id="pp-types-h">Set up for the way your business sells</h2>
+      <p>Choose your business type and Pentarch POS switches on the right tools, categories and typical products. You can change any of it later.</p>
+    </div>
+    <div class="types">
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-store"/></svg></span><h3>Shop &amp; duka</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Quick keys for your fastest sellers</li><li><svg class="ic"><use href="#ppi-check"/></svg>Sell by piece or by carton</li><li><svg class="ic"><use href="#ppi-check"/></svg>Credit book for regular customers</li></ul>
+        <button type="button" class="tr" data-try="duka">Try the shop demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-cart"/></svg></span><h3>Minimart &amp; supermarket</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Scale barcodes for weighed items</li><li><svg class="ic"><use href="#ppi-check"/></svg>Loyalty points for customers</li><li><svg class="ic"><use href="#ppi-check"/></svg>Several tills and branches</li></ul>
+        <button type="button" class="tr" data-try="minimart">Try the supermarket demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-wrench"/></svg></span><h3>Hardware &amp; building</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Quotes and invoices for contractors</li><li><svg class="ic"><use href="#ppi-check"/></svg>Wholesale prices by quantity</li><li><svg class="ic"><use href="#ppi-check"/></svg>Units: piece, box, bundle, metre</li></ul>
+        <button type="button" class="tr" data-try="hardware">Try the hardware demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-leaf"/></svg></span><h3>Agrovet</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Batch numbers and expiry dates</li><li><svg class="ic"><use href="#ppi-check"/></svg>Sell by sack, kg or packet</li><li><svg class="ic"><use href="#ppi-check"/></svg>Credit for farmers, with statements</li></ul>
+        <button type="button" class="tr" data-try="agrovet">Try the agrovet demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-pill"/></svg></span><h3>Pharmacy &amp; chemist</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>First-expiry-first-out selling by batch</li><li><svg class="ic"><use href="#ppi-check"/></svg>Expiry tracker: 30, 60 and 90 days</li><li><svg class="ic"><use href="#ppi-check"/></svg>Loyalty points for regular patients</li></ul>
+        <button type="button" class="tr" data-try="pharmacy">Try the chemist demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-shirt"/></svg></span><h3>Boutique, fashion &amp; shoes</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Sizes and colours, each with its own barcode</li><li><svg class="ic"><use href="#ppi-check"/></svg>Print price labels for new stock</li><li><svg class="ic"><use href="#ppi-check"/></svg>Stock per size, so you know what to reorder</li></ul>
+        <button type="button" class="tr" data-try="boutique">Try the boutique demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-mobile"/></svg></span><h3>Phones &amp; electronics</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Serial and IMEI captured at sale</li><li><svg class="ic"><use href="#ppi-check"/></svg>Quotes for corporate buyers</li><li><svg class="ic"><use href="#ppi-check"/></svg>Look up any serial to see when it was sold</li></ul>
+        <button type="button" class="tr" data-try="electronics">Try the electronics demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-scale"/></svg></span><h3>Butchery</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Sell by kg, with decimals</li><li><svg class="ic"><use href="#ppi-check"/></svg>Reads barcodes from weighing scales</li><li><svg class="ic"><use href="#ppi-check"/></svg>Credit for hotels and regular buyers</li></ul>
+        <button type="button" class="tr" data-try="butchery">Try the butchery demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-utensils"/></svg></span><h3>Restaurant, café &amp; hotel</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Tables, waiters and kitchen tickets</li><li><svg class="ic"><use href="#ppi-check"/></svg>Extras and notes on each dish</li><li><svg class="ic"><use href="#ppi-check"/></svg>Split bills, takeaway and delivery</li></ul>
+        <button type="button" class="tr" data-try="restaurant">Try the restaurant demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-wine"/></svg></span><h3>Bar &amp; liquor store</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Open tabs per table, bar tickets</li><li><svg class="ic"><use href="#ppi-check"/></svg>Sell by bottle or by crate</li><li><svg class="ic"><use href="#ppi-check"/></svg>Every void and drawer opening recorded</li></ul>
+        <button type="button" class="tr" data-try="bar">Try the bar demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-scissors"/></svg></span><h3>Salon, barber &amp; spa</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Services and products on one bill</li><li><svg class="ic"><use href="#ppi-check"/></svg>Stylist per service, commission report</li><li><svg class="ic"><use href="#ppi-check"/></svg>Loyalty points for regular clients</li></ul>
+        <button type="button" class="tr" data-try="salon">Try the salon demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+      <article class="ty" data-rv><div class="ty-h"><span class="bx"><svg class="ic"><use href="#ppi-truck"/></svg></span><h3>Wholesale &amp; distribution</h3></div>
+        <ul><li><svg class="ic"><use href="#ppi-check"/></svg>Wholesale and retail price tiers</li><li><svg class="ic"><use href="#ppi-check"/></svg>Cartons, bales and dozens</li><li><svg class="ic"><use href="#ppi-check"/></svg>Credit, statements and quotes</li></ul>
+        <button type="button" class="tr" data-try="wholesale">Try the wholesale demo<svg class="ic"><use href="#ppi-arrow"/></svg></button></article>
+    </div>
+    <p class="more" data-rv>Also set up for bakeries, cosmetics shops, auto spares, stationery and cyber cafés, LPG gas and water refill, and service businesses.</p>
+  </div>
+</section>
+
+<!-- FEATURE TOUR -->
+<section class="sec soft" id="pp-features" aria-labelledby="pp-feat-h">
+  <div class="w">
+    <div class="hd" data-rv>
+      <span class="eb">What it does</span>
+      <h2 id="pp-feat-h">Everything the counter needs, in one place</h2>
+      <p>From the first sale of the morning to the cash count at night.</p>
+    </div>
+    <div class="tour" data-rv>
+      <div class="tabs" role="tablist" aria-label="Features">
+        <button class="tab" role="tab" id="pt-1" aria-controls="pp-p1" aria-selected="true"><svg class="ic"><use href="#ppi-cash"/></svg>Selling</button>
+        <button class="tab" role="tab" id="pt-2" aria-controls="pp-p2" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#ppi-box"/></svg>Stock</button>
+        <button class="tab" role="tab" id="pt-3" aria-controls="pp-p3" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#ppi-users"/></svg>Customers &amp; credit</button>
+        <button class="tab" role="tab" id="pt-4" aria-controls="pp-p4" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#ppi-shield"/></svg>Staff &amp; theft control</button>
+        <button class="tab" role="tab" id="pt-5" aria-controls="pp-p5" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#ppi-chart"/></svg>Reports</button>
+        <button class="tab" role="tab" id="pt-6" aria-controls="pp-p6" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#ppi-branch"/></svg>Multi-branch</button>
+        <button class="tab" role="tab" id="pt-7" aria-controls="pp-p7" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#ppi-cloud"/></svg>Offline &amp; sync</button>
+        <button class="tab" role="tab" id="pt-8" aria-controls="pp-p8" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#ppi-barcode"/></svg>Barcodes &amp; labels</button>
+      </div>
+      <div>
+        <div class="pnl" role="tabpanel" id="pp-p1" aria-labelledby="pt-1" tabindex="0">
+          <div>
+            <h3>Fast selling at the counter</h3>
+            <p>Scan, search or tap a quick key. A sale is saved in a fraction of a second, with or without internet.</p>
+            <ul class="chk">
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Cash, M-Pesa, card, bank and credit, or a mix of them</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>M-Pesa codes checked for format and flagged if used before</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Hold a sale, serve the next customer, recall it later</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Receipts printed, or sent on WhatsApp</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Returns and refunds with the original receipt</li>
+            </ul>
+          </div>
+          <div class="mk" aria-hidden="true">
+            <div class="mk-h"><span class="mono">NRB1-000214</span><span class="pill"><i></i>Shift open</span></div>
+            <div class="ln"><span>Maize flour 2 kg</span><span class="m">2 × 210</span><b>420</b></div>
+            <div class="ln"><span>Cooking oil 1 L</span><span class="m">1 × 395</span><b>395</b></div>
+            <div class="ln"><span>Fresh milk 500 ml</span><span class="m">3 × 65</span><b>195</b></div>
+            <div class="tot"><span>Total</span><b>KES 1,010</b></div>
+            <div class="pays"><span>Cash</span><span class="on">M-Pesa</span><span>Credit</span></div>
+            <div class="code"><span>M-Pesa code <b class="mono">TKB4R7QX2M</b></span><span class="pill"><i></i>Checked</span></div>
+          </div>
+        </div>
+        <div class="pnl" role="tabpanel" id="pp-p2" aria-labelledby="pt-2" tabindex="0" hidden>
+          <div>
+            <h3>Stock you can trust</h3>
+            <p>Every item in and out is recorded with who did it and why, so stock on hand is always explained.</p>
+            <ul class="chk">
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Receive goods from suppliers, with or without an order</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Low-stock list and reorder suggestions</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Stock take by scanning, with a variance report</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Batches and expiry dates, damaged and expired write-offs</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Repack bulk items, for example a 50 kg sack into 1 kg packets</li>
+            </ul>
+          </div>
+          <div class="mk" aria-hidden="true">
+            <div class="mk-h"><span>Stock on hand</span><span class="pill n">Main branch</span></div>
+            <div class="st"><div class="st-t"><span>Sugar 1 kg</span><span class="mono">8 left</span></div><div class="bar"><i class="lo" style="width:12%"></i></div></div>
+            <div class="st"><div class="st-t"><span>Rice 5 kg</span><span class="mono">34</span></div><div class="bar"><i class="md" style="width:45%"></i></div></div>
+            <div class="st"><div class="st-t"><span>Bar soap 800 g</span><span class="mono">120</span></div><div class="bar"><i style="width:82%"></i></div></div>
+            <div class="st"><div class="st-t"><span>Yoghurt 500 ml</span><span class="pill w">Expires in 9 days</span></div></div>
+            <div class="code"><span>3 items below reorder level</span><span class="pill r">Create order</span></div>
+          </div>
+        </div>
+        <div class="pnl" role="tabpanel" id="pp-p3" aria-labelledby="pt-3" tabindex="0" hidden>
+          <div>
+            <h3>Customers and credit, without the lost book</h3>
+            <p>Sell on account with a credit limit, then see exactly who owes what and for how long.</p>
+            <ul class="chk">
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Find a customer by phone number in seconds</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Payments applied to the oldest debt first</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Statements and polite reminders by WhatsApp</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Debt age: 0–30, 31–60, 61–90 and over 90 days</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Loyalty points and wholesale customer groups</li>
+            </ul>
+          </div>
+          <div class="mk" aria-hidden="true">
+            <div class="cu"><span class="av">WM</span><div><b>Wanjiru M.</b><small class="mono">0712 ··· 456 · Retail</small></div></div>
+            <div class="kv"><div><small>Balance owed</small><b>4,850</b></div><div><small>Credit limit</small><b>10,000</b></div></div>
+            <div class="ag"><i style="height:90%"></i><i style="height:48%"></i><i style="height:22%;background:var(--sun)"></i><i style="height:8%;background:var(--coral)"></i></div>
+            <div class="agl"><span>0–30</span><span>31–60</span><span>61–90</span><span>90+</span></div>
+            <div class="mb"><span class="p">Receive payment</span><span>WhatsApp reminder</span></div>
+          </div>
+        </div>
+        <div class="pnl" role="tabpanel" id="pp-p4" aria-labelledby="pt-4" tabindex="0" hidden>
+          <div>
+            <h3>Staff accounts and theft control</h3>
+            <p>Each person signs in with their own PIN and sees only what their role allows. Sensitive actions need a manager's PIN.</p>
+            <ul class="chk">
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Roles: owner, manager, cashier, waiter, stock clerk, accountant</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Voids, discounts, price changes and drawer openings logged</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Discount limit per staff member</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Shift close: expected against counted cash, by note and coin</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Screen locks itself when the till is left alone</li>
+            </ul>
+          </div>
+          <div class="mk" aria-hidden="true">
+            <div class="mk-h"><span>Activity log</span><span class="pill n">Today</span></div>
+            <div class="lg"><time>10:42</time><span>Sale voided · <span class="mono">NRB1-000198</span></span><small>Brian (cashier) · approved by Grace with manager PIN</small></div>
+            <div class="lg"><time>11:05</time><span>Price changed · Sugar 1 kg</span><small>Grace (manager) · 160 to 150</small></div>
+            <div class="lg"><time>11:20</time><span>Drawer opened, no sale</span><small>Brian (cashier)</small></div>
+            <div class="var"><span>Shift close · variance</span><span class="mono">−150</span></div>
+          </div>
+        </div>
+        <div class="pnl" role="tabpanel" id="pp-p5" aria-labelledby="pt-5" tabindex="0" hidden>
+          <div>
+            <h3>Reports that answer real questions</h3>
+            <p>See today against yesterday and last week, which items make money, and where the cash went.</p>
+            <ul class="chk">
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Sales by item, category, staff, hour and payment method</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Profit and margin, expenses, profit and loss</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>VAT report by KRA tax code</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Slow and dead stock, debtors and supplier balances</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Print or export any report to Excel (CSV)</li>
+            </ul>
+          </div>
+          <div class="mk" aria-hidden="true">
+            <div class="kp"><div><small>Sales today</small><b>48,620</b><em>+12% on last week</em></div><div><small>Gross profit</small><b>9,870</b><em>20.3% margin</em></div></div>
+            <div class="hrs"><i style="height:18%"></i><i style="height:30%"></i><i style="height:42%"></i><i style="height:36%"></i><i style="height:55%"></i><i class="pk" style="height:92%"></i><i style="height:60%"></i><i style="height:48%"></i><i style="height:70%"></i><i class="pk" style="height:84%"></i><i style="height:40%"></i><i style="height:22%"></i></div>
+            <div class="hl"><span>8am</span><span>12pm</span><span>4pm</span><span>8pm</span></div>
+          </div>
+        </div>
+        <div class="pnl" role="tabpanel" id="pp-p6" aria-labelledby="pt-6" tabindex="0" hidden>
+          <div>
+            <h3>More than one branch</h3>
+            <p>Run every branch from one account. Each branch sells on its own, and the owner sees them all together.</p>
+            <ul class="chk">
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Branch comparison on the dashboard</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Stock transfers, sent and received with checks</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Different prices per branch where needed</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Staff limited to the branches they work in</li>
+            </ul>
+          </div>
+          <div class="mk" aria-hidden="true">
+            <div class="mk-h"><span>Branches · today</span><span class="pill"><i></i>All synced</span></div>
+            <div class="br"><span>Thika Road</span><b>62,300</b><small>2 tills · 184 sales</small></div>
+            <div class="br"><span>CBD</span><b>48,950</b><small>1 till · 141 sales</small></div>
+            <div class="br"><span>Ruiru</span><b>21,400</b><small>1 till · 77 sales</small></div>
+            <div class="trf"><svg class="ic"><use href="#ppi-truck"/></svg><span>Transfer: 20 × Cooking oil 1 L, CBD to Ruiru</span><span class="pill w">Sent</span></div>
+          </div>
+        </div>
+        <div class="pnl" role="tabpanel" id="pp-p7" aria-labelledby="pt-7" tabindex="0" hidden>
+          <div>
+            <h3>Works offline, syncs when it can</h3>
+            <p>The system runs on the computer itself, so a dropped connection or a finished bundle does not stop sales.</p>
+            <ul class="chk">
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Sell, print receipts and check stock with no internet</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Sales wait safely on the till and upload on reconnect</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Cloud backup of all your records</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Download a full backup or export to CSV at any time</li>
+            </ul>
+          </div>
+          <div class="mk sy" aria-hidden="true">
+            <div class="sy-r"><span><b>Internet down</b><br><span class="mono">Selling continues</span></span><span class="pill w"><i></i>Offline · 6 waiting</span></div>
+            <div class="sy-a"><svg class="ic"><use href="#ppi-down"/></svg></div>
+            <div class="sy-r"><span><b>Connection back</b><br><span class="mono">6 sales uploaded</span></span><span class="pill"><i></i>Synced just now</span></div>
+            <div class="sy-a"><svg class="ic"><use href="#ppi-down"/></svg></div>
+            <div class="sy-r"><span><b>Owner's phone</b><br><span class="mono">Sees the same figures</span></span><span class="pill n">Up to date</span></div>
+          </div>
+        </div>
+        <div class="pnl" role="tabpanel" id="pp-p8" aria-labelledby="pt-8" tabindex="0" hidden>
+          <div>
+            <h3>Barcodes and price labels</h3>
+            <p>Use the barcodes already on your goods, or create your own for loose items and print labels.</p>
+            <ul class="chk">
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Scan from anywhere on the screen, no clicking first</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Generate barcodes for items that have none</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Labels for label printers or A4 sticker sheets</li>
+              <li><svg class="ic"><use href="#ppi-check"/></svg>Carton barcodes sell the full pack at the carton price</li>
+            </ul>
+          </div>
+          <div class="mk" aria-hidden="true">
+            <div class="mk-h"><span>Print labels</span><span class="pill n">40 × 30 mm</span></div>
+            <div class="lbl"><b>Ankara dress · Size M</b><strong>KES 2,450</strong><div class="bc"></div><small>2000012345675</small></div>
+            <div class="lbs"><span class="pill n">38 × 25 mm</span><span class="pill">40 × 30 mm</span><span class="pill n">50 × 25 mm</span><span class="pill n">A4 sheet</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="pp-how" aria-labelledby="pp-how-h">
+  <div class="w">
+    <div class="hd" data-rv>
+      <span class="eb">How it works</span>
+      <h2 id="pp-how-h">From first look to first sale</h2>
+    </div>
+    <ol class="steps" style="list-style:none;margin:0;padding:0">
+      <li class="stp" data-rv><div class="n"><svg class="ic"><use href="#ppi-play2"/></svg></div><h3>Try the demo</h3><p>Use the live demo above with a sample business like yours. No sign-up needed.</p></li>
+      <li class="stp" data-rv><div class="n"><svg class="ic"><use href="#ppi-calendar"/></svg></div><h3>Free trial, 30 days</h3><p>Start the full system on your own computer with your own products. No payment needed.</p></li>
+      <li class="stp" data-rv><div class="n"><svg class="ic"><use href="#ppi-wrench"/></svg></div><h3>We install and train</h3><p>We set up the devices, load your products and train your staff at your business.</p></li>
+      <li class="stp" data-rv><div class="n"><svg class="ic"><use href="#ppi-cash"/></svg></div><h3>Start selling</h3><p>Sell from day one, with WhatsApp support from our Nairobi team when you need it.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec soft" id="pp-pricing" aria-labelledby="pp-price-h">
+  <div class="w">
+    <div class="hd" data-rv>
+      <span class="eb">Packages &amp; pricing</span>
+      <h2 id="pp-price-h">Clear prices, in Kenya shillings</h2>
+      <p>Buy the complete till from us, or use your own computer. Every package starts with a free trial.</p>
+    </div>
+    <div class="trial" data-rv><div>
+      <div><h3>30-day free trial, full system</h3><p>On your own computer, with your own products. No payment details needed to start.</p></div>
+      <a class="bt s" href="/pos/?trial=1" data-link="trial">Start free trial<svg class="ic ar"><use href="#ppi-arrow"/></svg></a>
+    </div></div>
+    <div class="plans">
+      <article class="pl ft" data-rv>
+        <span class="rib">Everything included</span>
+        <h3>Complete Till</h3>
+        <p class="sub">Devices, software, installation and training</p>
+        <div class="pr"><small>KES</small><b>69,900</b><span>one-off</span></div>
+        <ul>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Mini desktop computer, 19-inch screen, keyboard and mouse</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Barcode scanner, receipt printer and cash drawer</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Backup power (UPS) and 10 rolls of receipt paper</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Installed at your business, up to 3 staff trained</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Up to 300 products loaded for you</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Pentarch POS software for 12 months</li>
+        </ul>
+        <p class="fine">Delivered and installed in Nairobi. Outside Nairobi, transport is charged at cost. Device warranty 6 to 12 months; we handle claims for you.</p>
+        <a class="bt s" href="#book" data-pkg="Complete Till">Book the Complete Till<svg class="ic ar"><use href="#ppi-arrow"/></svg></a>
+      </article>
+      <article class="pl" data-rv>
+        <h3>Software + Setup</h3>
+        <p class="sub">For businesses with their own computer</p>
+        <div class="pr"><small>KES</small><b>15,000</b><span>one-off</span></div>
+        <ul>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Installed on your Windows PC or laptop, on site or remotely</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Staff training</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Up to 300 products loaded for you</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Pentarch POS software for 12 months</li>
+        </ul>
+        <p class="alt">Or pay as you go: <b>KES 3,500</b> setup, then <b>KES 1,200</b> per month.</p>
+        <p class="fine">Needs a Core i3 or better, 4 GB RAM and Google Chrome.</p>
+        <a class="bt p" href="#book" data-pkg="Software + Setup">Book setup<svg class="ic ar"><use href="#ppi-arrow"/></svg></a>
+      </article>
+      <article class="pl" data-rv>
+        <h3>Subscription</h3>
+        <p class="sub">After the trial, or after the first 12 months</p>
+        <div class="pr"><small>KES</small><b>1,200</b><span>per month</span></div>
+        <p class="alt">Or <b>KES 12,000</b> per year, two months free.</p>
+        <ul>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Unlimited products, users and devices in one branch</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Cloud backup and sync</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>All updates included</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>WhatsApp support, Monday to Saturday, 8am to 6pm</li>
+          <li><svg class="ic"><use href="#ppi-check"/></svg>Each extra branch: KES 1,000 per month (KES 10,000 per year)</li>
+        </ul>
+        <p class="fine">Pay by M-Pesa Paybill using your business code as the account number.</p>
+        <a class="bt ol" href="/pos/?trial=1" data-link="trial">Start with the free trial<svg class="ic ar"><use href="#ppi-arrow"/></svg></a>
+      </article>
+    </div>
+
+    <h3 class="addh" data-rv>Add-ons</h3>
+    <div class="tw" data-rv>
+      <table class="adds">
+        <thead><tr><th scope="col">Add-on</th><th scope="col">Price (KES)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Counter Kit</b><small>Scanner, receipt printer, cash drawer and 10 paper rolls, installed. For businesses with their own computer.</small></td><td>21,900</td></tr>
+          <tr><td><b>Label printer kit</b><small>Xprinter XP-470B with 2 rolls of 40 × 30 mm labels, set up.</small></td><td>16,500</td></tr>
+          <tr><td><b>Extra till</b><small>Second mini desktop, 19-inch screen, keyboard and mouse, scanner and printer, same branch, installed.</small></td><td>44,900</td></tr>
+          <tr><td><b>Extra UPS</b><small>Mercury Elite 650 Pro, for example for a second till.</small></td><td>8,500</td></tr>
+          <tr><td><b>Receipt paper carton</b><small>50 rolls, 80 × 80 mm.</small></td><td>7,000</td></tr>
+          <tr><td><b>Extra product loading</b><small>Beyond the first 300 items.</small></td><td>2,000 per 500 items</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DEVICES -->
+<section class="sec dark" id="pp-devices" aria-labelledby="pp-dev-h">
+  <div class="w">
+    <div class="hd" data-rv>
+      <span class="eb">The Complete Till</span>
+      <h2 id="pp-dev-h">The devices in the box</h2>
+      <p>Reliable, widely available models that we test before delivery. Spare parts and paper are easy to find in Nairobi.</p>
+    </div>
+    <div class="devs">
+      <div class="dv" data-rv><span class="bx"><svg class="ic"><use href="#ppi-cpu"/></svg></span><div><small>Computer</small><h3>HP EliteDesk 800 G2 Mini</h3><p>Refurbished. Core i5, 8 GB RAM, 256 GB SSD, Windows Pro. Small, quiet, low power.</p></div></div>
+      <div class="dv" data-rv><span class="bx"><svg class="ic"><use href="#ppi-monitor"/></svg></span><div><small>Screen</small><h3>HP 19-inch monitor</h3><p>Refurbished, P19b or EliteDisplay class.</p></div></div>
+      <div class="dv" data-rv><span class="bx"><svg class="ic"><use href="#ppi-keyboard"/></svg></span><div><small>Input</small><h3>USB keyboard and mouse</h3><p>Wired combo, HP or Logitech MK120 class.</p></div></div>
+      <div class="dv" data-rv><span class="bx"><svg class="ic"><use href="#ppi-ups"/></svg></span><div><small>Backup power</small><h3>Mercury Elite 650 Pro UPS</h3><p>Keeps the till running about 15 to 20 minutes in a blackout and protects against surges.</p></div></div>
+      <div class="dv" data-rv><span class="bx"><svg class="ic"><use href="#ppi-scan"/></svg></span><div><small>Scanner</small><h3>Syble XB-6221 2D</h3><p>Reads barcodes, QR codes and codes on phone screens.</p></div></div>
+      <div class="dv" data-rv><span class="bx"><svg class="ic"><use href="#ppi-printer"/></svg></span><div><small>Receipt printer</small><h3>Xprinter XP-Q80A</h3><p>80 mm thermal printer with auto-cutter, USB and network.</p></div></div>
+      <div class="dv" data-rv><span class="bx"><svg class="ic"><use href="#ppi-drawer"/></svg></span><div><small>Cash drawer</small><h3>OCOM ECD-420X</h3><p>Metal, 5 note and 8 coin slots. Opens on cash sales.</p></div></div>
+      <div class="dv" data-rv><span class="bx"><svg class="ic"><use href="#ppi-roll"/></svg></span><div><small>Paper</small><h3>10 receipt rolls</h3><p>80 × 80 mm thermal paper to get you started.</p></div></div>
+    </div>
+    <div class="dnote" data-rv><span><svg class="ic"><use href="#ppi-shield"/></svg>Devices tested before delivery</span><span><svg class="ic"><use href="#ppi-wrench"/></svg>6 to 12 month warranty, claims handled by Pentarch</span><span><svg class="ic"><use href="#ppi-pin"/></svg>Installed at your business in Nairobi</span></div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="sec" id="pp-compare" aria-labelledby="pp-cmp-h">
+  <div class="w">
+    <div class="hd" data-rv>
+      <span class="eb">Compare</span>
+      <h2 id="pp-cmp-h">Paper book, a typical POS, or Pentarch POS</h2>
+    </div>
+    <div class="tw cw" data-rv>
+      <table class="cmp">
+        <caption class="sr">Comparison of a paper book, a typical POS system and Pentarch POS</caption>
+        <thead><tr><th scope="col">What you need</th><th scope="col">Paper book</th><th scope="col">Typical POS</th><th scope="col" class="us">Pentarch POS</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Today's sales and profit</th><td data-l="Paper book"><span class="yn n"><svg class="ic"><use href="#ppi-x"/></svg>Added up at night, if at all</span></td><td data-l="Typical POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Sales totals</span></td><td class="us" data-l="Pentarch POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Live sales and profit, compared with last week</span></td></tr>
+          <tr><th scope="row">Stock on hand</th><td data-l="Paper book"><span class="yn n"><svg class="ic"><use href="#ppi-x"/></svg>Only after a manual count</span></td><td data-l="Typical POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Yes</span></td><td class="us" data-l="Pentarch POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Yes, with expiry dates and reorder suggestions</span></td></tr>
+          <tr><th scope="row">Who owes you money</th><td data-l="Paper book"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Credit book, easy to lose</span></td><td data-l="Typical POS"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Often limited</span></td><td class="us" data-l="Pentarch POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Limits, statements, debt age, WhatsApp reminders</span></td></tr>
+          <tr><th scope="row">Voids, discounts and drawer openings</th><td data-l="Paper book"><span class="yn n"><svg class="ic"><use href="#ppi-x"/></svg>Not recorded</span></td><td data-l="Typical POS"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Varies</span></td><td class="us" data-l="Pentarch POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Every action logged with the staff name</span></td></tr>
+          <tr><th scope="row">Works without internet</th><td data-l="Paper book"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Yes</span></td><td data-l="Typical POS"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Often needs a connection</span></td><td class="us" data-l="Pentarch POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Yes, fully, and syncs later</span></td></tr>
+          <tr><th scope="row">M-Pesa payments</th><td data-l="Paper book"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Written by hand</span></td><td data-l="Typical POS"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Varies</span></td><td class="us" data-l="Pentarch POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Code checked, repeated codes flagged</span></td></tr>
+          <tr><th scope="row">Language</th><td data-l="Paper book"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Any</span></td><td data-l="Typical POS"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Usually English only</span></td><td class="us" data-l="Pentarch POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>English and Kiswahili</span></td></tr>
+          <tr><th scope="row">Try before you pay</th><td data-l="Paper book"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Not applicable</span></td><td data-l="Typical POS"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Sometimes</span></td><td class="us" data-l="Pentarch POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Live demo and 30-day free trial</span></td></tr>
+          <tr><th scope="row">Setup and support</th><td data-l="Paper book"><span class="yn n"><svg class="ic"><use href="#ppi-x"/></svg>None</span></td><td data-l="Typical POS"><span class="yn m"><svg class="ic"><use href="#ppi-half"/></svg>Varies</span></td><td class="us" data-l="Pentarch POS"><span class="yn y"><svg class="ic"><use href="#ppi-check"/></svg>Installed, trained and supported from Nairobi</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec soft" id="pp-faq" aria-labelledby="pp-faq-h">
+  <div class="w">
+    <div class="hd c" data-rv>
+      <span class="eb">Questions</span>
+      <h2 id="pp-faq-h">Frequently asked questions</h2>
+    </div>
+    <div class="faq" data-rv>
+      <details><summary>Does it really work without internet?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>Yes. Selling, receipts, stock and reports all work offline because the system runs on your computer. Sales are kept safely on the till and upload to your cloud backup as soon as the connection returns.</p></div></details>
+      <details><summary>How much internet does it use?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>Very little. Syncing sends small text records, not pictures or video, so an ordinary data bundle or home Wi-Fi is enough. Internet is only needed for backup, sync between devices and branches, and updates.</p></div></details>
+      <details><summary>Is my data safe, and who owns it?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>Your data belongs to you. It is stored on your till and backed up to the Pentarch cloud, separated from every other business. You can download a full backup or export everything to CSV at any time.</p><p>If your subscription lapses, you can still open the system, view reports and export your records. We never hold your data back.</p></div></details>
+      <details><summary>Is it KRA eTIMS compliant?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>Receipts already carry your KRA PIN and the KRA tax code for every item (A to E), and the VAT report groups sales by tax code. eTIMS integration is on the way. We will tell every client when it is available and switch it on for you.</p></div></details>
+      <details><summary>How does M-Pesa work with it?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>The cashier records the M-Pesa transaction code with the sale. The system checks the code format and warns if the same code has been used before. Your till or paybill number prints on every receipt, and M-Pesa totals appear in the shift and sales reports. A payment request sent to the customer's phone can be set up on request.</p></div></details>
+      <details><summary>What happens when the 30-day trial ends?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>Choose a plan and pay by M-Pesa Paybill: KES 1,200 per month or KES 12,000 per year. Nothing is charged automatically. Everything you entered during the trial stays. If you do not continue, selling stops after a short grace period, but you can still view and export your records.</p></div></details>
+      <details><summary>Can I run more than one branch?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>Yes. Each extra branch is KES 1,000 per month (KES 10,000 per year). You get branch comparison, stock transfers between branches and per-branch prices, all under one account.</p></div></details>
+      <details><summary>What support do I get?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>WhatsApp and phone support from our Nairobi team, Monday to Saturday, 8am to 6pm, on +254 729 455 912. Updates are included in the subscription.</p></div></details>
+      <details><summary>Will my staff be trained?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>Yes. Both packages include training for up to 3 staff. The system also has a short guided tour for new cashiers, and every screen is available in English and Kiswahili.</p></div></details>
+      <details><summary>Can I use my own computer?<svg class="ic"><use href="#ppi-down"/></svg></summary><div class="a"><p>Yes. You need a Windows PC or laptop with a Core i3 processor or better, 4 GB RAM and Google Chrome. USB barcode scanners and 58 mm or 80 mm thermal receipt printers work with it. Add our Counter Kit if you need the scanner, printer and cash drawer.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="sec" id="book" aria-labelledby="pp-book-h">
+  <div class="w book">
+    <div data-rv>
+      <div class="hd">
+        <span class="eb">Book a demo</span>
+        <h2 id="pp-book-h">See it working in your business</h2>
+        <p>Tell us about your business and a convenient time. We will call to confirm, then show you the system at your premises or online.</p>
+      </div>
+      <ul class="bk-l">
+        <li><svg class="ic"><use href="#ppi-check"/></svg>A demo set up for your type of business</li>
+        <li><svg class="ic"><use href="#ppi-check"/></svg>Honest advice on the right package and devices</li>
+        <li><svg class="ic"><use href="#ppi-check"/></svg>No obligation to buy</li>
+      </ul>
+      <div class="bk-c">
+        <a class="bt wa" href="https://wa.me/254729455912" data-link="wa" target="_blank" rel="noopener"><svg class="ic"><use href="#ppi-chat"/></svg>Chat on WhatsApp</a>
+        <a class="bt ol" href="tel:+254729455912"><svg class="ic"><use href="#ppi-call"/></svg>+254 729 455 912</a>
+      </div>
+      <p class="bk-m">Or email <a href="mailto:info@pentarchcommunications.com">info@pentarchcommunications.com</a></p>
+    </div>
+    <div class="bk-f" data-rv>
+<form class="fk" onsubmit="event.preventDefault()">
+<style>.fk{display:grid;gap:14px;grid-template-columns:1fr 1fr;font-family:'DM Sans',sans-serif}.fk h3{grid-column:1/-1;font:700 22px 'Bricolage Grotesque',sans-serif;color:#121A2E;margin:0}.fk label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:#121A2E;min-width:0}.fk .f{grid-column:1/-1}.fk input,.fk select,.fk textarea{font:inherit;font-weight:400;padding:12px 14px;border:1px solid #E4E0D7;border-radius:10px;background:#F7F5F0;min-height:48px;width:100%}.fk button{grid-column:1/-1;min-height:52px;border:0;border-radius:12px;background:#C9301F;color:#fff;font:600 16px 'DM Sans',sans-serif}@media(max-width:560px){.fk{grid-template-columns:1fr}}</style>
+<h3>Book a free demo</h3>
+<label>Your name<input name="name"></label><label>Business name<input name="business"></label>
+<label>Business type<select name="business_type"><option>General shop / duka</option></select></label><label>Phone<input name="phone" placeholder="07XX XXX XXX"></label>
+<label>Email<input name="email"></label><label>Town<input name="town"></label>
+<label>Preferred date<input type="date" name="preferred_date"></label><label>Preferred time<select name="preferred_time"><option>Morning</option></select></label>
+<label class="f">Message<textarea name="message" rows="3"></textarea></label><input type="hidden" name="agent_code">
+<button type="submit">Request my demo</button></form>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sec fin" aria-labelledby="pp-fin-h">
+  <div class="w in">
+    <div>
+      <h2 id="pp-fin-h">Ready when you are</h2>
+      <p>Try the live demo now, or start your free 30-day trial with your own products today.</p>
+      <div class="ct">
+        <a href="tel:+254729455912"><svg class="ic"><use href="#ppi-call"/></svg>+254 729 455 912</a>
+        <a href="mailto:info@pentarchcommunications.com"><svg class="ic"><use href="#ppi-mail"/></svg>info@pentarchcommunications.com</a>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="bt s" href="#pp-demo" data-act="start"><svg class="ic"><use href="#ppi-play2"/></svg>Try the demo</a>
+      <a class="bt p" href="/pos/?trial=1" data-link="trial">Start free trial<svg class="ic ar"><use href="#ppi-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var root = document.querySelector('.ppos');
+  if (!root || root.getAttribute('data-ready')) return;
+  root.setAttribute('data-ready', '1');
+  var BASE = root.getAttribute('data-pos') || '/pos/';
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* agent code from ?ref=AG-XXXX, passed to demo and trial links */
+  var ref = '';
+  try { ref = (new URLSearchParams(location.search).get('ref') || '').trim().toUpperCase(); } catch (e) {}
+  if (!/^AG-[A-Z0-9]{3,8}$/.test(ref)) ref = '';
+  function posUrl(demoType) {
+    var p = [];
+    if (demoType) { p.push('demo=1'); p.push('type=' + encodeURIComponent(demoType)); }
+    else p.push('trial=1'); /* opens the trial form, never the demo the visitor just tried */
+    if (ref) p.push('ref=' + encodeURIComponent(ref));
+    return BASE + (p.length ? '?' + p.join('&') : '');
+  }
+  var type = 'duka';
+  function refreshLinks() {
+    root.querySelectorAll('[data-link]').forEach(function (a) {
+      var k = a.getAttribute('data-link');
+      if (k === 'trial') a.href = posUrl('');
+      else if (k === 'full') a.href = posUrl(type);
+      else if (k === 'wa') {
+        var msg = 'Hello Pentarch, I would like a demo of Pentarch POS.' + (ref ? ' Agent code: ' + ref + '.' : '');
+        a.href = 'https://wa.me/254729455912?text=' + encodeURIComponent(msg);
+      }
+    });
+  }
+
+  /* poster content per business type (illustration only) */
+  var P = {
+    duka:['General shop',[['Maize flour 2 kg',210],['Sugar 1 kg',160],['Cooking oil 1 L',395],['Bread 400 g',65],['Fresh milk 500 ml',65],['Bar soap 800 g',230]]],
+    minimart:['Minimart',[['Rice 5 kg',890],['Tomatoes, per kg',120],['Yoghurt 500 ml',150],['Tissue 10 pack',520],['Juice 1 L',230],['Eggs, tray',420]]],
+    hardware:['Hardware',[['Cement 50 kg',780],['Nails 3 inch, kg',220],['Iron sheet G30',950],['Paint 4 L',2350],['PVC pipe 1/2"',380],['Padlock 50 mm',450]]],
+    agrovet:['Agrovet',[['Dairy meal 70 kg',3200],['Maize seed 2 kg',720],['Fertiliser 50 kg',3500],['Dewormer 100 ml',350],['Layers mash 70 kg',3600],['Sprayer 16 L',2800]]],
+    pharmacy:['Chemist',[['Paracetamol 500 mg',50],['ORS sachet',30],['Cough syrup 100 ml',280],['Vitamin C 100s',450],['Bandage 7.5 cm',80],['Hand sanitiser',250]]],
+    boutique:['Boutique',[['Ankara dress, M',2450],['Jeans, 32',1800],['Sneakers, 42',3200],['T-shirt, L',650],['Handbag',2200],['Scarf',450]]],
+    electronics:['Phone shop',[['Smartphone 64 GB',12999],['Earphones',450],['Charger 20 W',950],['Power bank 10k',1800],['Screen guard',300],['Memory card 32 GB',800]]],
+    butchery:['Butchery',[['Beef, per kg',650],['Goat meat, per kg',800],['Chicken, whole',750],['Mince, per kg',700],['Sausages 500 g',380],['Liver, per kg',600]]],
+    bakery:['Bakery',[['White bread 400 g',65],['Queen cakes 6s',150],['Birthday cake 1 kg',1800],['Doughnut',40],['Mandazi 4s',40],['Brown bread 600 g',95]]],
+    restaurant:['Restaurant',[['Beef stew & rice',450],['Chicken & chips',650],['Tea',80],['Chapati',40],['Fresh juice',200],['Pilau',400]]],
+    bar:['Bar',[['Lager 500 ml',300],['Soda 500 ml',80],['Water 500 ml',60],['Whisky 250 ml',950],['Wine glass',450],['Roast meat, 1/2 kg',600]]],
+    salon:['Salon',[['Haircut',300],['Blow dry',500],['Braiding',2500],['Manicure',600],['Hair food',350],['Shampoo 400 ml',650]]],
+    wholesale:['Wholesale',[['Sugar 50 kg bale',7800],['Flour 2 kg x 12',2400],['Soap carton',2700],['Oil 20 L',5600],['Rice 25 kg',4200],['Salt 1 kg x 20',600]]],
+    autospares:['Auto spares',[['Engine oil 4 L',3200],['Brake pads',2400],['Oil filter',650],['Spark plug',350],['Wiper blade',800],['Bulb H4',300]]],
+    stationery:['Stationery & cyber',[['Printing, per page',10],['Exercise book',60],['Photocopy, per page',5],['Ball pen',20],['A4 ream',650],['Lamination',50]]],
+    gas_water:['Gas & water',[['Gas refill 6 kg',1150],['Gas refill 13 kg',2700],['Water 20 L refill',100],['Burner & grill',850],['Water 18.9 L new',650],['Regulator',900]]]
+  };
+  var COLORS = ['#C9301F','#0A7F7B','#1F3C7A','#B97A00','#14B1AC','#EE4B3B'];
+  var fmt = function (n) { return n.toLocaleString('en-KE'); };
+  function paintPoster() {
+    var d = P[type] || P.duka, g = document.getElementById('pp-pg'), c = document.getElementById('pp-pc');
+    if (!g) return;
+    document.getElementById('pp-pt').textContent = 'Sample: ' + d[0];
+    g.innerHTML = '';
+    d[1].forEach(function (it, i) {
+      var t = document.createElement('div'); t.className = 'tile'; t.style.setProperty('--c', COLORS[i % COLORS.length]);
+      var w2 = document.createElement('div'); w2.className = 'tw2'; var em = document.createElement('em'); var ini = document.createElement('i'); ini.textContent = it[0].charAt(0); ini.style.color = COLORS[i % COLORS.length]; w2.appendChild(em); w2.appendChild(ini);
+      var b = document.createElement('b'); b.textContent = it[0]; var s = document.createElement('span'); s.textContent = fmt(it[1]);
+      t.appendChild(w2); t.appendChild(b); t.appendChild(s); g.appendChild(t);
+    });
+    c.innerHTML = ''; var total = 0;
+    d[1].slice(0, 3).forEach(function (it, i) {
+      var q = i === 0 ? 2 : 1, l = document.createElement('div'); l.className = 'cl';
+      var a = document.createElement('span'); a.textContent = q + ' × ' + it[0]; var b = document.createElement('b'); b.textContent = fmt(it[1] * q);
+      l.appendChild(a); l.appendChild(b); c.appendChild(l); total += it[1] * q;
+    });
+    document.getElementById('pp-ptot').textContent = 'KES ' + fmt(total);
+  }
+
+  /* live demo iframe, scaled into the monitor */
+  var scr = document.getElementById('pp-scr'), frame = null;
+  function fit() {
+    if (!scr) return;
+    var w = scr.clientWidth;
+    if (w >= 600) {
+      var VW = 1366, VH = 768, k = w / VW;
+      scr.style.aspectRatio = 'auto'; scr.style.height = Math.round(VH * k) + 'px';
+      if (frame) { frame.style.width = VW + 'px'; frame.style.height = VH + 'px'; frame.style.transform = 'scale(' + k + ')'; }
+    } else {
+      var h = Math.max(520, Math.min(720, Math.round(window.innerHeight * 0.78)));
+      scr.style.aspectRatio = 'auto'; scr.style.height = h + 'px';
+      if (frame) { frame.style.width = w + 'px'; frame.style.height = h + 'px'; frame.style.transform = 'none'; }
+    }
+  }
+  function load() {
+    if (!scr) return;
+    scr.classList.add('loading');
+    if (!frame) {
+      frame = document.createElement('iframe');
+      frame.title = 'Pentarch POS live demo';
+      frame.setAttribute('allow', 'clipboard-write');
+      frame.addEventListener('load', function () { scr.classList.remove('loading'); });
+      var o = document.getElementById('pp-go'); if (o) o.remove();
+      var pst = scr.querySelector('.pst'); if (pst) pst.remove();
+      scr.appendChild(frame);
+    }
+    fit();
+    frame.src = posUrl(type);
+  }
+  function setType(t, start) {
+    if (!P[t]) return;
+    type = t;
+    root.querySelectorAll('.sw button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-type') === t ? 'true' : 'false'); });
+    refreshLinks();
+    if (frame || start) load(); else paintPoster();
+  }
+  root.querySelectorAll('.sw button').forEach(function (b) {
+    b.addEventListener('click', function () { setType(b.getAttribute('data-type'), true); });
+  });
+  var go = document.getElementById('pp-go');
+  if (go) go.addEventListener('click', function () { load(); });
+  function toDemo() {
+    var el = document.getElementById('pp-demo');
+    if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+  root.querySelectorAll('[data-try]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.getAttribute('data-try');
+      toDemo(); setType(t, true);
+      var sel = root.querySelector('.sw button[data-type="' + t + '"]'); if (sel) sel.scrollIntoView({ block: 'nearest', inline: 'center' });
+    });
+  });
+  root.querySelectorAll('[data-act="start"]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); toDemo(); if (!frame) load(); });
+  });
+  if (window.ResizeObserver && scr) new ResizeObserver(fit).observe(scr); else window.addEventListener('resize', fit);
+
+  /* feature tabs */
+  var tabs = Array.prototype.slice.call(root.querySelectorAll('.tab'));
+  function sel(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab, p = document.getElementById(t.getAttribute('aria-controls'));
+      t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
+      if (p) { p.hidden = !on; if (on && !reduce) { p.classList.remove('in'); void p.offsetWidth; p.classList.add('in'); } }
+    });
+    if (focus) tab.focus();
+    if (tabs[0].parentElement.scrollWidth > tabs[0].parentElement.clientWidth) { var tl = tabs[0].parentElement; tl.scrollTo({ left: Math.max(0, tab.offsetLeft - tl.offsetLeft - 16), behavior: reduce ? 'auto' : 'smooth' }); }
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { sel(t); });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key, n = null;
+      if (k === 'ArrowRight' || k === 'ArrowDown') n = tabs[(i + 1) % tabs.length];
+      else if (k === 'ArrowLeft' || k === 'ArrowUp') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (k === 'Home') n = tabs[0]; else if (k === 'End') n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); sel(n, true); }
+    });
+  });
+
+  /* package buttons pre-select the booking form when it has a matching field */
+  root.querySelectorAll('[data-pkg]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var f = root.querySelector('#book textarea[name="message"]');
+      if (f && !f.value) f.value = 'Interested in: ' + a.getAttribute('data-pkg');
+      var r = root.querySelector('#book input[name="agent_code"]');
+      if (r && ref && !r.value) r.value = ref;
+    });
+  });
+  var rf = root.querySelector('#book input[name="agent_code"]'); if (rf && ref && !rf.value) rf.value = ref;
+
+  /* scroll reveal */
+  if (!reduce && 'IntersectionObserver' in window) {
+    root.classList.add('js');
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    root.querySelectorAll('[data-rv]').forEach(function (el, i) {
+      var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      el.style.transitionDelay = Math.min(sib, 6) * 60 + 'ms';
+      io.observe(el);
+    });
+  }
+
+  refreshLinks(); paintPoster(); fit();
+})();
+</script>
+</div>
+
+<footer class="ff">Site footer (preview placeholder) · Pentarch Communications, Nairobi</footer></body></html>

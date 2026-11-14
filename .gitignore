@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.zip
+app/qa/visual/
+app/qa/*.png
+cloud/qa/*.png
+docs/build/out/
+.claude/

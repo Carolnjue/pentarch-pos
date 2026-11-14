@@ -1,0 +1,1 @@
+import{bY as t,bV as a}from"./index-CyU-2bPn.js";const r={rent:t.navy,salaries:t.teal,transport:t.sun,utilities:t.plum,supplies:t.tealD,airtime:t.mpesa,repairs:t.coral,other:t.mute},i=(s,e=0)=>r[s]||a[(e+3)%a.length];export{i as c};

@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-09T12:59:57.931Z",
+  "results": [
+    {
+      "name": "Admin login",
+      "ok": true
+    },
+    {
+      "name": "Every admin screen renders without PHP notices or JS errors",
+      "ok": true
+    },
+    {
+      "name": "Agents: approve pending agent from the list",
+      "ok": true
+    },
+    {
+      "name": "Agent detail with pipeline and commissions",
+      "ok": true
+    },
+    {
+      "name": "Business detail: record a payment via the form (auto amount) → commission flash",
+      "ok": true
+    },
+    {
+      "name": "Business detail actions: extend trial, reset password, suspend/reactivate",
+      "ok": true
+    },
+    {
+      "name": "Commissions: bulk approve then mark paid with M-Pesa ref",
+      "ok": true
+    },
+    {
+      "name": "Website page: shortcode form validates, books (with ?ref) and shows success",
+      "ok": true
+    },
+    {
+      "name": "Bookings: assign agent + status from the list",
+      "ok": true
+    },
+    {
+      "name": "Lead detail and settings save round-trip",
+      "ok": true
+    },
+    {
+      "name": "CSV export downloads with BOM and headers",
+      "ok": true
+    },
+    {
+      "name": "Admin at phone width (390px) stays usable",
+      "ok": true
+    }
+  ]
+}

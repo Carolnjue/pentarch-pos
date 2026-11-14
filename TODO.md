@@ -1,0 +1,2 @@
+- [ ] App: honour /pos/?trial=1 and don't persist demo mode when in iframe (site page issue)
+- [ ] Plugin: add extra_till (44900) setting exposed in /public/config and agents resources

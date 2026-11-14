@@ -1,0 +1,13 @@
+import { chromium, newPage, BASE, shot, sleep, scan, report, DESK } from './lib.mjs';
+const b = await chromium.launch();
+const { page } = await newPage(b, DESK);
+const t0 = Date.now();
+await page.goto(BASE + '?demo=1&type=duka');
+await page.waitForSelector('.shell', { timeout: 20000 });
+console.log('demo ready in', Date.now() - t0, 'ms');
+await sleep(800);
+await shot(page, 'smoke-home');
+await page.goto(BASE + '#/sell'); await sleep(800);
+await shot(page, 'smoke-sell');
+report('smoke');
+await b.close();

@@ -1,0 +1,20 @@
+/* Expenses page + record dialog */
+.exp-month { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.exp-mname { font: 700 19px var(--f-head); min-width: 170px; text-align: center; }
+.exp-page .rpt-kpis { margin-bottom: 14px; }
+.exp-cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
+.exp-cat { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; min-height: 74px; padding: 10px 8px; border: 1.5px solid var(--line); border-radius: var(--r); background: #fff; color: var(--body); font: 600 13.5px/1.25 var(--f-body); text-align: center; cursor: pointer; transition: .15s; }
+.exp-cat:hover { border-color: #cfc9bc; background: #fbfaf7; }
+.exp-cat .ic { color: var(--navy); }
+.exp-cat.on { border-color: var(--coral); background: var(--coral-50); color: var(--text); box-shadow: 0 0 0 1px var(--coral) inset; }
+.exp-cat.on .ic { color: var(--coral-d); }
+.exp-cat.add { border-style: dashed; color: var(--mute); }
+.exp-cat.add .ic { color: var(--mute); }
+.exp-till { padding: 12px 14px; border-radius: var(--r); background: var(--sun-50); }
+.exp-form .amount-in { font-size: 26px; }
+@media (max-width: 720px) {
+  .exp-cats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .exp-cat { min-height: 64px; font-size: 12.5px; }
+  .exp-mname { min-width: 0; flex: 1; }
+  .exp-page .page-h .actions .btn.primary { flex-basis: 100%; }
+}

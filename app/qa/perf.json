@@ -1,0 +1,88 @@
+{
+ "at": "2026-11-09T12:41:21.093Z",
+ "core_js_gz_kb": 191.5,
+ "core_css_gz_kb": 14.4,
+ "first_load_welcome_ms": 253,
+ "demo_seed_ms": 2773,
+ "reload_and_index_20k_ms": 937,
+ "catalogue_size": 20074,
+ "search": [
+  {
+   "q": "milk",
+   "median_ms": 1.2,
+   "max_ms": 1.5,
+   "hits": 40
+  },
+  {
+   "q": "kabras sugar",
+   "median_ms": 1,
+   "max_ms": 6.7,
+   "hits": 1
+  },
+  {
+   "q": "jogo",
+   "median_ms": 0.7,
+   "max_ms": 1,
+   "hits": 40
+  },
+  {
+   "q": "premium soap 1kg",
+   "median_ms": 7.4,
+   "max_ms": 8.2,
+   "hits": 0
+  },
+  {
+   "q": "6160000012345",
+   "median_ms": 0.5,
+   "max_ms": 0.6,
+   "hits": 1
+  },
+  {
+   "q": "P1999",
+   "median_ms": 0.3,
+   "max_ms": 0.5,
+   "hits": 11
+  },
+  {
+   "q": "brokside",
+   "median_ms": 1.4,
+   "max_ms": 1.6,
+   "hits": 40
+  },
+  {
+   "q": "oil 2l",
+   "median_ms": 2.9,
+   "max_ms": 3.6,
+   "hits": 40
+  },
+  {
+   "q": "zzzz",
+   "median_ms": 2.3,
+   "max_ms": 2.6,
+   "hits": 0
+  },
+  {
+   "q": "tea",
+   "median_ms": 0.5,
+   "max_ms": 0.6,
+   "hits": 40
+  }
+ ],
+ "search_worst_median_ms": 7.4,
+ "typed_search_ms": [
+  22,
+  30.5,
+  31.3
+ ],
+ "sale_complete_offline_ms": [
+  25,
+  46,
+  44,
+  33,
+  39,
+  42,
+  35,
+  26
+ ],
+ "sale_complete_offline_median_ms": 39
+}

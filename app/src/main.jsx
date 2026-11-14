@@ -1,0 +1,22 @@
+import { render } from 'preact';
+import '@fontsource/dm-sans/latin-400.css';
+import '@fontsource/dm-sans/latin-500.css';
+import '@fontsource/dm-sans/latin-600.css';
+import '@fontsource/dm-sans/latin-700.css';
+import '@fontsource/bricolage-grotesque/latin-600.css';
+import '@fontsource/bricolage-grotesque/latin-700.css';
+import '@fontsource/bricolage-grotesque/latin-800.css';
+import '@fontsource/jetbrains-mono/latin-500.css';
+import '@fontsource/jetbrains-mono/latin-700.css';
+import '@fontsource/jetbrains-mono/latin-800.css';
+import './styles.css';
+import { App } from './app.jsx';
+import { boot } from './auth/session.js';
+import { initLang } from './i18n/index.js';
+import { phase } from './state.js';
+import { registerSW } from './pwa.js';
+
+initLang();
+render(<App />, document.getElementById('app'));
+boot().catch((e) => { console.error(e); phase.value = 'error'; window.__bootError = e; });
+registerSW();
