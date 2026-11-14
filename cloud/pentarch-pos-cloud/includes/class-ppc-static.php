@@ -210,7 +210,8 @@ class PPC_Static {
 			header( 'Service-Worker-Allowed: ' . $sw_scope );
 		}
 		if ( 'html' === $ext ) {
-			header( 'X-Frame-Options: SAMEORIGIN' );
+			// The POS may be shown inside the Pentarch Systems website (live demo); nowhere else.
+			header( "Content-Security-Policy: frame-ancestors 'self' https://pentarchsystemssolutions.co.ke https://www.pentarchsystemssolutions.co.ke" );
 			header( 'Referrer-Policy: strict-origin-when-cross-origin' );
 		}
 		// Hide WordPress / PHP noise.
