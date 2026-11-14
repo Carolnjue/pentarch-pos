@@ -30,7 +30,7 @@ class PPC_Notify {
 		if ( $cta_url ) {
 			$h .= '<div style="padding:12px 24px 24px"><a href="' . esc_url( $cta_url ) . '" style="display:inline-block;background:#C9301F;color:#fff;text-decoration:none;padding:11px 18px;border-radius:8px;font-weight:bold">' . esc_html( $cta_label ) . '</a></div>';
 		}
-		$h .= '</div><p style="text-align:center;color:#646E82;font-size:12px;margin-top:14px">Pentarch Communications · ' . esc_html( PPC_Settings::get( 'phone' ) ) . ' · ' . esc_html( PPC_Settings::get( 'email' ) ) . '</p></div>';
+		$h .= '</div><p style="text-align:center;color:#646E82;font-size:12px;margin-top:14px">Pentarch Systems Solutions · ' . esc_html( PPC_Settings::get( 'phone' ) ) . ' · ' . esc_html( PPC_Settings::get( 'email' ) ) . '</p></div>';
 		return $h;
 	}
 

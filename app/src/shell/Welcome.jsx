@@ -18,7 +18,7 @@ export default function Welcome() {
       <div class="inner">
         <header class="row" style={{ marginBottom: '40px' }}>
           <img src="/pos/brand/pentarch-mark.svg" alt="" width="42" height="42" />
-          <div class="grow"><b style={{ font: '800 21px var(--f-head)', whiteSpace: 'nowrap' }}>Pentarch POS</b><div class="desk-only" style={{ color: '#8f9bb8', fontSize: '13px' }}>{t('by Pentarch Communications, Nairobi')}</div></div>
+          <div class="grow"><b style={{ font: '800 21px var(--f-head)', whiteSpace: 'nowrap' }}>Pentarch POS</b><div class="desk-only" style={{ color: '#8f9bb8', fontSize: '13px' }}>{t('by Pentarch Systems Solutions, Nairobi')}</div></div>
           <div class="seg" style={{ background: 'var(--ink-2)' }}>{['en', 'sw'].map((l) => <button style={{ color: lang.value === l ? 'var(--text)' : '#cfd6e6' }} class={lang.value === l ? 'on' : ''} onClick={() => setLang(l)} aria-pressed={lang.value === l} aria-label={l === 'en' ? 'English' : 'Kiswahili'}><span class="desk-only">{l === 'en' ? 'English' : 'Kiswahili'}</span><span class="mobile-only">{l.toUpperCase()}</span></button>)}</div>
         </header>
         {view === 'home' && <Home go={setView} />}

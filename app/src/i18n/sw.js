@@ -158,7 +158,7 @@ export default {
   "Buy Goods (Till)": "Buy Goods (Till)",
   "Buy Goods Till": "Till ya Buy Goods",
   "By": "Na",
-  "by Pentarch Communications, Nairobi": "na Pentarch Communications, Nairobi",
+  "by Pentarch Systems Solutions, Nairobi": "na Pentarch Systems Solutions, Nairobi",
   "Call": "Piga simu",
   "Call +254 729 455 912": "Piga +254 729 455 912",
   "Call us": "Tupigie",

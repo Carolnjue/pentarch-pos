@@ -13,7 +13,7 @@ export default function AboutPanel() {
   return (
     <div class="col gap-l">
       <Panel title={t('About Pentarch POS')}>
-        <div class="row gap-l mb"><img src="/pos/brand/pentarch-mark.svg" alt="" width="56" height="56" /><div><h2>Pentarch POS</h2><div class="mute">{t('Version')} 1.0.0 · {t('by Pentarch Communications, Nairobi')}</div></div></div>
+        <div class="row gap-l mb"><img src="/pos/brand/pentarch-mark.svg" alt="" width="56" height="56" /><div><h2>Pentarch POS</h2><div class="mute">{t('Version')} 1.0.0 · {t('by Pentarch Systems Solutions, Nairobi')}</div></div></div>
         <dl class="kv">
           <dt>{t('Business ID')}</dt><dd class="mono small">{m.tenant_id}</dd>
           <dt>{t('Device')}</dt><dd class="mono small">{S.device.value.name} · #{m.device_no || 1} · {m.device_id}</dd>

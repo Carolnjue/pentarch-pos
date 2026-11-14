@@ -241,7 +241,7 @@ export function Profile() {
             </form>
           </section>
           <button class="btn btn--danger btn--block" onClick={signOut}>{t('Sign out')}</button>
-          <p class="muted small center">Pentarch POS Agents v1.0 · Pentarch Communications</p>
+          <p class="muted small center">Pentarch POS Agents v1.0 · Pentarch Systems Solutions</p>
         </div>
       </div>
     </Shell>

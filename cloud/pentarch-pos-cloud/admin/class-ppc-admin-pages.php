@@ -262,7 +262,7 @@ class PPC_Admin_Pages {
 		$usage = PPC_Tenants::usage( $t->id );
 		$tid   = array( 'tenant_id' => $t->id );
 
-		$wa_text = 'Hello ' . PPC_Util::first_name( $t->owner_name ) . ', this is Pentarch Communications about your Pentarch POS account (' . $t->code . ').';
+		$wa_text = 'Hello ' . PPC_Util::first_name( $t->owner_name ) . ', this is Pentarch Systems Solutions about your Pentarch POS account (' . $t->code . ').';
 		$actions = PPC_Admin_UI::link_btn( PPC_Util::wa_link( $t->phone, $wa_text ), 'WhatsApp owner', 'wa', 'target="_blank" rel="noopener"' )
 			. PPC_Admin_UI::link_btn( 'mailto:' . $t->email, 'Email' )
 			. PPC_Admin_UI::link_btn( PPC_Admin::export_url( 'tenant_records', $tid ), 'Export data (JSON)' );
@@ -519,7 +519,7 @@ class PPC_Admin_Pages {
 		$rates = PPC_Agents::rates( $a );
 		$aid   = array( 'agent_id' => $a->id );
 
-		$actions = PPC_Admin_UI::link_btn( PPC_Util::wa_link( $a->phone, 'Hello ' . PPC_Util::first_name( $a->name ) . ', this is Pentarch Communications.' ), 'WhatsApp', 'wa', 'target="_blank" rel="noopener"' );
+		$actions = PPC_Admin_UI::link_btn( PPC_Util::wa_link( $a->phone, 'Hello ' . PPC_Util::first_name( $a->name ) . ', this is Pentarch Systems Solutions.' ), 'WhatsApp', 'wa', 'target="_blank" rel="noopener"' );
 		if ( 'pending' === $a->status ) {
 			$actions .= PPC_Admin_UI::button_form( 'agent_status', 'Approve agent', array_merge( $aid, array( 'status' => 'active' ) ), 'primary' );
 		} elseif ( 'active' === $a->status ) {
@@ -786,7 +786,7 @@ class PPC_Admin_Pages {
 				PPC_Admin_UI::close();
 				return;
 			}
-			$wa = 'Hello ' . PPC_Util::first_name( $b->name ) . ', this is Pentarch Communications. Thank you for booking a Pentarch POS demo (' . $b->ref . '). When is a good time for us to visit or call?';
+			$wa = 'Hello ' . PPC_Util::first_name( $b->name ) . ', this is Pentarch Systems Solutions. Thank you for booking a Pentarch POS demo (' . $b->ref . '). When is a good time for us to visit or call?';
 			PPC_Admin_UI::open( $b->business, '<code>' . esc_html( $b->ref ) . '</code> · ' . PPC_Admin_UI::badge( $b->status ) . ' · received ' . esc_html( PPC_Util::fmt_date( $b->created_at, true ) ), PPC_Admin_UI::link_btn( PPC_Util::wa_link( $b->phone, $wa ), 'WhatsApp', 'wa', 'target="_blank" rel="noopener"' ) . PPC_Admin_UI::link_btn( 'tel:+' . $b->phone, 'Call' ), array( 'Demo bookings', PPC_Admin_UI::url( 'ppc-bookings' ) ) );
 			echo '<div class="ppc-grid ppc-grid--detail"><div class="ppc-col">';
 			PPC_Admin_UI::card_open( 'Request' );

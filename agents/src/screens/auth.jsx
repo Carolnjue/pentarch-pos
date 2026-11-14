@@ -41,7 +41,7 @@ function AuthFrame({ children, wide, hero = true }) {
           </ul>
         </div>}
         {children}
-        <p class="auth__foot">Pentarch Communications · <a href="https://wa.me/254729455912">+254 729 455 912</a></p>
+        <p class="auth__foot">Pentarch Systems Solutions · <a href="https://wa.me/254729455912">+254 729 455 912</a></p>
       </div>
     </div>
   );

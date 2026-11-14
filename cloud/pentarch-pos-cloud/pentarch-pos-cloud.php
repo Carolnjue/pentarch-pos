@@ -6,7 +6,7 @@
  * Version:           1.1.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
- * Author:            Pentarch Communications
+ * Author:            Pentarch Systems Solutions
  * Author URI:        https://pentarchcommunications.com
  * License:           Proprietary
  * Text Domain:       pentarch-pos-cloud
