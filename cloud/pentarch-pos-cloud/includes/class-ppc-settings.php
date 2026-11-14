@@ -66,7 +66,7 @@ class PPC_Settings {
 			'res_one_pager'         => '',
 			'agent_terms_url'       => '',
 			// Paths.
-			'website_pos_path'      => '/systems/pos/',
+			'website_pos_path'      => 'https://pentarchsystemssolutions.co.ke/pos/',
 			// Security / housekeeping.
 			'trust_proxy'           => 0,
 			'rate_register'         => 5,
@@ -222,6 +222,8 @@ class PPC_Settings {
 	}
 
 	public static function website_url( $args = array() ) {
-		return add_query_arg( $args, home_url( self::get( 'website_pos_path', '/systems/pos/' ) ) );
+		$path = (string) self::get( 'website_pos_path', 'https://pentarchsystemssolutions.co.ke/pos/' );
+		$base = preg_match( '#^https?://#i', $path ) ? $path : home_url( $path );
+		return add_query_arg( $args, $base );
 	}
 }

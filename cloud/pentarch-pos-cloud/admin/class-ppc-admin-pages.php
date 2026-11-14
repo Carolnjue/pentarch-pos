@@ -1083,7 +1083,7 @@ class PPC_Admin_Pages {
 		self::field( 'phone', 'Phone (display)', 'text' );
 		self::field( 'email', 'Support email', 'email' );
 		self::field( 'admin_email', 'Admin notification email', 'email', 'New trials, agent sign-ups and demo bookings. Blank = site admin email.' );
-		self::field( 'website_pos_path', 'Website POS page path', 'text', 'Used for agent share links' );
+		self::field( 'website_pos_path', 'Website POS page', 'text', 'Full address or a path on this site. Used for agent share links.' );
 		echo '</div></section>';
 
 		echo '<section class="ppc-card" id="resources"><div class="ppc-card__head"><h3>Agent resources</h3><span class="ppc-mute">Links shown in the agent portal (PDFs in the Media Library work well)</span></div><div class="ppc-form__grid">';
