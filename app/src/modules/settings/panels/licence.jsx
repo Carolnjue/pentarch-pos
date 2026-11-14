@@ -96,7 +96,7 @@ export default function LicencePanel() {
           <div class="col">
             <a class="btn ok lg" href={wa} target="_blank" rel="noopener"><Icon name="whatsapp" />{t('WhatsApp Pentarch')}</a>
             <a class="btn lg" href="tel:+254729455912"><Icon name="phone" />{t('Call +254 729 455 912')}</a>
-            <a class="btn lg" href="mailto:info@pentarchcommunications.com"><Icon name="mail" />info@pentarchcommunications.com</a>
+            <a class="btn lg" href="mailto:info@pentarchsystemssolutions.co.ke"><Icon name="mail" />info@pentarchsystemssolutions.co.ke</a>
             <div class="callout small"><Icon name="shield" size={18} /><span>{t('We never hold your data hostage: even after expiry you can view reports, export and back up.')}</span></div>
           </div>
         </div>

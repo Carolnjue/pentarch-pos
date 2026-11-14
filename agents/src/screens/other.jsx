@@ -76,7 +76,7 @@ export function Resources() {
   const cfg = useCache('config');
   const p = priceList((res && res.prices) || (cfg && cfg.prices));
   const n = (v) => Number(v).toLocaleString('en-KE');
-  const c = (res && res.contact) || { whatsapp: '254729455912', phone: '+254 729 455 912', email: 'info@pentarchcommunications.com' };
+  const c = (res && res.contact) || { whatsapp: '254729455912', phone: '+254 729 455 912', email: 'info@pentarchsystemssolutions.co.ke' };
   return (
     <Shell title={t('Resources')} back="/more">
       <div class="cols cols--detail">

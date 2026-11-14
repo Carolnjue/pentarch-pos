@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name:       Pentarch POS Cloud
- * Plugin URI:        https://pentarchcommunications.com/systems/pos/
+ * Plugin URI:        https://pentarchsystemssolutions.co.ke/pos/
  * Description:       Cloud sync, licences, superadmin, sales-agent portal and demo bookings for Pentarch POS. Serves the POS app at /pos/ and the agent portal at /pos/agents/.
  * Version:           1.1.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Pentarch Systems Solutions
- * Author URI:        https://pentarchcommunications.com
+ * Author URI:        https://pentarchsystemssolutions.co.ke
  * License:           Proprietary
  * Text Domain:       pentarch-pos-cloud
  *

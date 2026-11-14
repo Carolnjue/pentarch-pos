@@ -60,7 +60,7 @@ export default function HelpPage() {
         ))}
       </div>
       <div class="card pad mt-l row wrap" style={{ background: 'var(--ink)', color: '#fff', borderColor: 'var(--ink)' }}>
-        <div class="grow"><h3 style={{ color: '#fff' }}>{t('Pentarch support')}</h3><p style={{ color: '#aab5cf', margin: '4px 0 0' }}>+254 729 455 912 · info@pentarchcommunications.com · {t('Mon–Sat, 8am–6pm')}</p></div>
+        <div class="grow"><h3 style={{ color: '#fff' }}>{t('Pentarch support')}</h3><p style={{ color: '#aab5cf', margin: '4px 0 0' }}>+254 729 455 912 · info@pentarchsystemssolutions.co.ke · {t('Mon–Sat, 8am–6pm')}</p></div>
         <a class="btn sun" href="tel:+254729455912"><Icon name="phone" />{t('Call us')}</a>
       </div>
     </div>

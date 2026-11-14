@@ -26,8 +26,8 @@ export default function Welcome() {
         {view === 'trial' && <Trial back={() => setView('home')} />}
         {view === 'signin' && <SignIn back={() => setView('home')} />}
         <footer class="row wrap" style={{ marginTop: '48px', color: '#8f9bb8', fontSize: '14px', gap: '18px' }}>
-          <span>+254 729 455 912</span><span>info@pentarchcommunications.com</span>
-          <a style={{ color: '#cfd6e6' }} href="https://pentarchcommunications.com/systems/pos/#book" target="_blank" rel="noopener">{t('Book a demo')}</a>
+          <span>+254 729 455 912</span><span>info@pentarchsystemssolutions.co.ke</span>
+          <a style={{ color: '#cfd6e6' }} href="https://pentarchsystemssolutions.co.ke/pos/#demo" target="_blank" rel="noopener">{t('Book a demo')}</a>
           <a style={{ color: '#cfd6e6' }} href="https://wa.me/254729455912" target="_blank" rel="noopener">WhatsApp</a>
         </footer>
       </div>

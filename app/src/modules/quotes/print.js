@@ -56,7 +56,7 @@ function payBox(ref) {
   if (!mp && !bank) return '';
   return `<div class="pay">${mp ? `<div class="box"><div class="lab">${t('Pay by M-Pesa')}</div>${mp}</div>` : ''}${bank ? `<div class="box"><div class="lab">${t('Bank transfer')}</div>${esc(bank).replace(/\n/g, '<br>')}</div>` : ''}</div>`;
 }
-const foot = () => `<div class="foot">${esc(S.settings.value.invoice_footer || S.settings.value.receipt_footer || '')}<br>Powered by Pentarch POS · pentarchcommunications.com</div>`;
+const foot = () => `<div class="foot">${esc(S.settings.value.invoice_footer || S.settings.value.receipt_footer || '')}<br>Powered by Pentarch POS · pentarchsystemssolutions.co.ke</div>`;
 
 export function quoteHtml(q, customer) {
   const calc = quoteCalc(q.lines);

@@ -110,7 +110,7 @@ export async function invoiceHtml(sale, ctx, { title = t('INVOICE'), dueDays = 3
   ${sale.paid ? `<tr><td>${t('Paid')}</td><td class="r">${kes(sale.paid)}</td></tr>` : ''}
   ${sale.balance ? `<tr><td class="b">${t('Balance due')}</td><td class="r b">${kes(sale.balance)}</td></tr>` : ''}</table>
   ${mpesaLine(st) ? `<div class="box" style="margin-top:18px"><b>${t('How to pay')}:</b> ${mpesaLine(st)}</div>` : ''}
-  <div class="foot">${esc(st.receipt_footer || '')}<br>Powered by Pentarch POS · pentarchcommunications.com</div>`;
+  <div class="foot">${esc(st.receipt_footer || '')}<br>Powered by Pentarch POS · pentarchsystemssolutions.co.ke</div>`;
   return doc(body, { paper: 'a4', title: sale.no, css });
 }
 
@@ -174,7 +174,7 @@ export function statementHtml(customer, acc, ctx, { from, to } = {}) {
 export async function testPageHtml(ctx, paper) {
   const st = ctx.settings;
   const bc = await barcodeSvg('2000000000015', { height: 36 });
-  const qr = await qrSvg('https://pentarchcommunications.com/systems/pos/', 3);
+  const qr = await qrSvg('https://pentarchsystemssolutions.co.ke/pos/', 3);
   const body = `${header(ctx, st)}<div class="hr"></div><div class="c xl">${t('PRINTER TEST')}</div>
   <div class="c s">${t('Paper')}: ${paper} mm · ${dt(Date.now())}</div><div class="hr2"></div>
   <div class="row"><span>${t('Left')}</span><span>${t('Right')}</span></div><div class="c">||||||||||||||||||||||||||||||||</div>

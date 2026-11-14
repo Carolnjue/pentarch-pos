@@ -25,7 +25,7 @@ export default function AboutPanel() {
         <Row title={t('WhatsApp support')} sub="+254 729 455 912"><a class="btn ok" target="_blank" rel="noopener" href={waLink('254729455912', t('Hello Pentarch, I need help with Pentarch POS ({b}).', { b: S.business.value?.name }))}><Icon name="whatsapp" />{t('Chat')}</a></Row>
         <Row title={t('Keyboard shortcuts')}><Btn icon="keyboard" onClick={openShortcuts}>{t('Show')}</Btn></Row>
         <Row title={t('Quick guide')}><a class="btn" href="#/help"><Icon name="help" />{t('Open help')}</a></Row>
-        <Row title={t('Website')}><a class="btn" href="https://pentarchcommunications.com/systems/pos/" target="_blank" rel="noopener"><Icon name="external" />pentarchcommunications.com</a></Row>
+        <Row title={t('Website')}><a class="btn" href="https://pentarchsystemssolutions.co.ke/pos/" target="_blank" rel="noopener"><Icon name="external" />pentarchsystemssolutions.co.ke</a></Row>
       </Panel>
     </div>
   );

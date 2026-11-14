@@ -543,7 +543,7 @@ export default {
   "Last visit": "Alikuja mwisho",
   "Leave 0 to use the normal price": "Acha 0 kutumia bei ya kawaida",
   "Leave demo": "Toka kwenye demo",
-  "Leave empty to use pentarchcommunications.com": "Acha wazi kutumia pentarchcommunications.com",
+  "Leave empty to use Pentarch Cloud": "Acha wazi kutumia Pentarch Cloud",
   "Left": "Kushoto",
   "Less": "Pungufu",
   "Let customers pay with points": "Ruhusu wateja kulipa kwa pointi",

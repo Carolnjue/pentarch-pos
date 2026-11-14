@@ -171,7 +171,7 @@ function Banners({ lic }) {
           <div style={{ maxHeight: '360px', overflow: 'auto' }}>{BUSINESS_TYPES.map((bt) => <button onClick={() => startDemo(bt.id)}><Icon name={bt.icon} size={16} />{t(bt.label)}</button>)}</div>
         </Dropdown>
         <button class="btn ghost sm desk-only" style={{ color: '#fff' }} onClick={async () => { await resetDemo(); toast(t('Demo reset')); }}><Icon name="refresh" size={16} />{t('Reset demo')}</button>
-        <a class="btn ghost sm desk-only" style={{ color: '#fff' }} href="https://pentarchcommunications.com/systems/pos/#book" target="_blank" rel="noopener">{t('Book a demo')}</a>
+        <a class="btn ghost sm desk-only" style={{ color: '#fff' }} href="https://pentarchsystemssolutions.co.ke/pos/#demo" target="_blank" rel="noopener">{t('Book a demo')}</a>
         <button class="btn sun sm" onClick={() => exitDemo({ trial: true })}>{t('Start free trial')}</button>
       </div>
     );

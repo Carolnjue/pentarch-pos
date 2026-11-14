@@ -55,7 +55,7 @@ class PPC_Settings {
 			// Contact.
 			'whatsapp'              => '254729455912',
 			'phone'                 => '+254 729 455 912',
-			'email'                 => 'info@pentarchcommunications.com',
+			'email'                 => 'info@pentarchsystemssolutions.co.ke',
 			'admin_email'           => '',
 			// Agent resources (URLs).
 			'res_sales_guide'       => '',
